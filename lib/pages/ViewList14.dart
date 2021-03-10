@@ -211,13 +211,15 @@ class _ViewList14State extends State<ViewList14> {
     );
   }
   String tempval = "";
-  String safari_booklet_common_name="",safari_booklet_father_name="",safari_booklet_machinegun_no="";
+  String safari_booklet_common_name="",safari_booklet_father_name="",safari_booklet_machinegun_no="", safari_booklet_issue_date = '', safari_booklet_picture = '';
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
     setState(() {
       safari_booklet_common_name=preferences.getString('safari_booklet_common_name');
       safari_booklet_father_name=preferences.getString('safari_booklet_father_name');
       safari_booklet_machinegun_no=preferences.getString('safari_booklet_machinegun_no');
+      safari_booklet_issue_date=preferences.getString('safari_booklet_issue_date');
+      safari_booklet_picture = preferences.getString('safari_booklet_picture');
     });
   }
   @override
@@ -440,6 +442,68 @@ class _ViewList14State extends State<ViewList14> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
+                                padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Container(
+                                      width: 400,
+                                      //padding: EdgeInsets.only(left: 20),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            textDirection: locator<LanguageService>().currentlanguage == 0
+                                                ? TextDirection.ltr
+                                                : TextDirection.rtl,
+                                            children: <Widget>[
+                                              completedcheckbox(isCompleted: (safari_booklet_issue_date??'') ==''?false:true),
+                                              /*Text(
+                                                '*',
+                                                style: TextStyle(color: Colors.red, fontSize: 18),
+                                              ),*/
+                                              Flexible(
+                                                child: Container(
+                                                  child: Text(setapptext(key: 'key_Issued_on'),
+                                                    overflow: TextOverflow.visible,
+                                                    softWrap: true,
+                                                    style: TextStyle(),
+                                                    textDirection:
+                                                    locator<LanguageService>().currentlanguage == 0
+                                                        ? TextDirection.ltr
+                                                        : TextDirection.rtl,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: 5,),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 10),
+                                            child: Text(safari_booklet_issue_date??'',style: TextStyle(fontSize: 20,color: Colors.black),),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                            child: Divider(
+                                              height: 2,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          SizedBox(height: 10,)
+                                        ],
+                                      )
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                                 padding: EdgeInsets.all(10),
                                 child: Card(
                                   shape: RoundedRectangleBorder(
@@ -460,7 +524,7 @@ class _ViewList14State extends State<ViewList14> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: (localdata.info_photo_hint_photo_note1?? "") ==''?false:true),
+                                                isCompleted: (safari_booklet_picture?? "") ==''?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -486,8 +550,6 @@ class _ViewList14State extends State<ViewList14> {
                                                   localdata.isdrafted == 2
                                                       ? null
                                                       : () async {
-                                                    tempval = localdata
-                                                        .info_photo_hint_reg_no;
 
                                                     showModalBottomSheet(
                                                         context:
@@ -519,7 +581,7 @@ class _ViewList14State extends State<ViewList14> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.camera);
+                                                                        localdata.safari_booklet_picture = await appimagepicker(source: ImageSource.camera);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -533,7 +595,7 @@ class _ViewList14State extends State<ViewList14> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.gallery);
+                                                                        localdata.safari_booklet_picture = await appimagepicker(source: ImageSource.gallery);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -551,12 +613,6 @@ class _ViewList14State extends State<ViewList14> {
                                                             ),
                                                           );
                                                         });
-                                                    setState(() {});
-                                                    localdata
-                                                        .info_photo_hint_reg_no =
-                                                        tempval;
-                                                    _regno.text =
-                                                        tempval;
                                                     setState(() {});
                                                   },
                                                 )
@@ -577,20 +633,17 @@ class _ViewList14State extends State<ViewList14> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_note1
+                                              child: safari_booklet_picture
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_note1)
+                                                  : File(safari_booklet_picture)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_note1),
+                                                File(safari_booklet_picture),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(

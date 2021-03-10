@@ -170,6 +170,103 @@ class _ViewList5State extends State<ViewList5> {
     }
     return result;
   }
+  String getGovernmentalStatus(String id){
+    var result="";
+    switch (id) {
+      case "0":
+        result = setapptext(key: 'key_none_selected');
+        break;
+      case "1":
+        result = setapptext(key: 'key_School_Startup');
+        break;
+      case "2":
+        result = setapptext(key: 'key_Secondary_school');
+        break;
+      case "3":
+        result=setapptext(key: 'key_Great_school');
+        break;
+      case "4":
+        result=setapptext(key: 'key_University');
+        break;
+      case "5":
+        result=setapptext(key: 'key_Learning_Center');
+        break;
+      case "6":
+        result=setapptext(key: 'key_hospital');
+        break;
+      case "7":
+        result=setapptext(key: 'key_clinic');
+        break;
+      case "8":
+        result=setapptext(key: 'key_Playground');
+        break;
+      case "9":
+        result=setapptext(key: 'key_Park');
+        break;
+      case "10":
+        result=setapptext(key: 'key_Military_area');
+        break;
+      case "11":
+        result=setapptext(key: 'key_mosque');
+        break;
+      case "12":
+        result=setapptext(key: 'key_Graveyard');
+        break;
+      case "13":
+        result=setapptext(key: 'key_Pilgrimage');
+        break;
+      case "14":
+        result=setapptext(key: 'key_other1');
+        break;
+      default:
+        result = id;
+    }
+    return result;
+  }
+  String getSpecifiedUse(String id){
+    var result="";
+    switch (id) {
+      case "0":
+        result = setapptext(key: 'key_none_selected');
+        break;
+      case "1":
+        result = setapptext(key: 'key_Car_station');
+        break;
+      case "2":
+        result = setapptext(key: 'key_Enough_National_Station');
+        break;
+      case "3":
+        result=setapptext(key: 'key_air_square');
+        break;
+      case "4":
+        result=setapptext(key: 'key_Road');
+        break;
+      case "5":
+        result=setapptext(key: 'key_Wasteland');
+        break;
+      case "6":
+        result=setapptext(key: 'key_agriculture');
+        break;
+      case "7":
+        result=setapptext(key: 'key_Green_area');
+        break;
+      case "8":
+        result=setapptext(key: 'key_Jungle');
+        break;
+      case "9":
+        result=setapptext(key: 'key_abc');
+        break;
+      case "10":
+        result=setapptext(key: 'key_Sea');
+        break;
+      case "11":
+        result=setapptext(key: 'key_Empty_land');
+        break;
+      default:
+        result = id;
+    }
+    return result;
+  }
   String getRedeem(String id){
     var result="";
     switch (id) {
@@ -193,6 +290,7 @@ class _ViewList5State extends State<ViewList5> {
     }
     return result;
   }
+
   Widget completedcheckbox({bool isCompleted}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -285,7 +383,7 @@ class _ViewList5State extends State<ViewList5> {
       ),
     );
   }
-  String location_zone="",property_have_document="",current_use_of_property="",proprietary_properties="",redeemable_property="";
+  String location_zone="",property_have_document="",current_use_of_property="",proprietary_properties="",redeemable_property="",govt_property = '',specified_current_use = '', unspecified_current_use_type='' ;
   Future getData()async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
     setState(() {
@@ -293,8 +391,10 @@ class _ViewList5State extends State<ViewList5> {
       property_have_document=preferences.getString('property_have_document');
       current_use_of_property=preferences.getString('current_use_of_property');
       proprietary_properties=preferences.getString('proprietary_properties');
-      print("jhdfjghdhguihdgdjkhgdgjhdhghdhghdghdghdg=${proprietary_properties}");
-      redeemable_property=preferences.getString('redeemable_property');
+      print("jhdfjghdhguihdgdjkhgdgjhdhghdhghdghdghdg=${getCommercialStatus(proprietary_properties)}");
+      govt_property=preferences.getString('govt_property') ?? "" ;
+      specified_current_use=preferences.getString('specified_current_use') ?? "" ;
+      unspecified_current_use_type=preferences.getString('unspecified_current_use_type')??'';
 
     });
   }
@@ -514,7 +614,7 @@ class _ViewList5State extends State<ViewList5> {
                               ),
                             ),
                           ),
-                          if(current_use_of_property=='1'||current_use_of_property=='3')Container(
+                          if(current_use_of_property=='2'||current_use_of_property=='3')Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -538,7 +638,7 @@ class _ViewList5State extends State<ViewList5> {
                                             ? TextDirection.ltr
                                             : TextDirection.rtl,
                                         children: <Widget>[
-                                          completedcheckbox(isCompleted: getCommercialStatus(proprietary_properties) ?? "" ==''?false:true),
+                                          completedcheckbox(isCompleted: getCommercialStatus(proprietary_properties) ==''?false:true),
                                           /*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),
@@ -576,7 +676,7 @@ class _ViewList5State extends State<ViewList5> {
                               ),
                             ),
                           ),
-                          if(current_use_of_property=='2'||current_use_of_property=='3')Container(
+                          if(current_use_of_property=='1'||current_use_of_property=='3')Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -624,6 +724,192 @@ class _ViewList5State extends State<ViewList5> {
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10),
                                         child: Text(getRedeem(redeemable_property) ?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                        child: Divider(
+                                          height: 2,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,)
+                                    ],
+                                  )
+                              ),
+                            ),
+                          ),
+                          if(current_use_of_property=='5')Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                  width: 400,
+                                  //padding: EdgeInsets.only(left: 20),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        textDirection: locator<LanguageService>().currentlanguage == 0
+                                            ? TextDirection.ltr
+                                            : TextDirection.rtl,
+                                        children: <Widget>[
+                                          completedcheckbox(isCompleted: getGovernmentalStatus(govt_property)==''?false:true),
+                                          /*Text(
+                                            '*',
+                                            style: TextStyle(color: Colors.red, fontSize: 18),
+                                          ),*/
+                                          Flexible(
+                                            child: Container(
+                                              child: Text(setapptext(key: 'key_govt_proprty'),
+                                                overflow: TextOverflow.visible,
+                                                softWrap: true,
+                                                style: TextStyle(),
+                                                textDirection:
+                                                locator<LanguageService>().currentlanguage == 0
+                                                    ? TextDirection.ltr
+                                                    : TextDirection.rtl,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 5,),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10),
+                                        child: Text(getGovernmentalStatus(govt_property) ?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                        child: Divider(
+                                          height: 2,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,)
+                                    ],
+                                  )
+                              ),
+                            ),
+                          ),
+                          if(current_use_of_property=='8')Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                  width: 400,
+                                  //padding: EdgeInsets.only(left: 20),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        textDirection: locator<LanguageService>().currentlanguage == 0
+                                            ? TextDirection.ltr
+                                            : TextDirection.rtl,
+                                        children: <Widget>[
+                                          completedcheckbox(isCompleted: getSpecifiedUse(specified_current_use) ==''?false:true),
+                                          /*Text(
+                                            '*',
+                                            style: TextStyle(color: Colors.red, fontSize: 18),
+                                          ),*/
+                                          Flexible(
+                                            child: Container(
+                                              child: Text(setapptext(key: 'key_type_of_currentuse'),
+                                                overflow: TextOverflow.visible,
+                                                softWrap: true,
+                                                style: TextStyle(),
+                                                textDirection:
+                                                locator<LanguageService>().currentlanguage == 0
+                                                    ? TextDirection.ltr
+                                                    : TextDirection.rtl,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 5,),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10),
+                                        child: Text(getSpecifiedUse(specified_current_use) ?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                        child: Divider(
+                                          height: 2,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,)
+                                    ],
+                                  )
+                              ),
+                            ),
+                          ),
+                          if(current_use_of_property=='9')Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                  width: 400,
+                                  //padding: EdgeInsets.only(left: 20),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        textDirection: locator<LanguageService>().currentlanguage == 0
+                                            ? TextDirection.ltr
+                                            : TextDirection.rtl,
+                                        children: <Widget>[
+                                          completedcheckbox(isCompleted: unspecified_current_use_type ==''?false:true),
+                                          /*Text(
+                                            '*',
+                                            style: TextStyle(color: Colors.red, fontSize: 18),
+                                          ),*/
+                                          Flexible(
+                                            child: Container(
+                                              child: Text(setapptext(key: 'key_current_usage'),
+                                                overflow: TextOverflow.visible,
+                                                softWrap: true,
+                                                style: TextStyle(),
+                                                textDirection:
+                                                locator<LanguageService>().currentlanguage == 0
+                                                    ? TextDirection.ltr
+                                                    : TextDirection.rtl,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 5,),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10),
+                                        child: Text(unspecified_current_use_type?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

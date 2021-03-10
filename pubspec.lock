@@ -316,7 +316,7 @@ packages:
     source: hosted
     version: "1.0.3+1"
   jiffy:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: jiffy
       url: "https://pub.dartlang.org"

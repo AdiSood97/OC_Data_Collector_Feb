@@ -23,7 +23,7 @@ class _ViewList12State extends State<ViewList12> {
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
-  TextEditingController _regno;
+  TextEditingController _north;
   Widget wrapContaint({String titel, String subtitel}) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -136,7 +136,7 @@ class _ViewList12State extends State<ViewList12> {
     );
   }
   String tempval = "";
-  String boundaryinfonote="",fore_limits_east="",fore_limits_west="",fore_limits_south="",fore_limits_north="";
+  String boundaryinfonote="",fore_limits_east="",fore_limits_west="",fore_limits_south="",fore_limits_north="", home_map = '', home_photo = '';
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
     setState(() {
@@ -145,6 +145,8 @@ class _ViewList12State extends State<ViewList12> {
       fore_limits_west=preferences.getString('fore_limits_west');
       fore_limits_south=preferences.getString('fore_limits_south');
       fore_limits_north=preferences.getString('fore_limits_north');
+      home_map=preferences.getString('home_map');
+      home_photo=preferences.getString('home_photo');
     });
   }
   @override
@@ -511,7 +513,7 @@ class _ViewList12State extends State<ViewList12> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: (localdata.home_map?? "") ==''?false:true),
+                                                isCompleted: (home_map?? "") ==''?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -538,7 +540,7 @@ class _ViewList12State extends State<ViewList12> {
                                                       ? null
                                                       : () async {
                                                     tempval = localdata
-                                                        .info_photo_hint_reg_no;
+                                                        .fore_limits_north;
 
                                                     showModalBottomSheet(
                                                         context:
@@ -570,7 +572,7 @@ class _ViewList12State extends State<ViewList12> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.camera);
+                                                                        localdata.home_map = await appimagepicker(source: ImageSource.camera);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -584,7 +586,7 @@ class _ViewList12State extends State<ViewList12> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.gallery);
+                                                                        localdata.home_map = await appimagepicker(source: ImageSource.gallery);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -606,7 +608,7 @@ class _ViewList12State extends State<ViewList12> {
                                                     localdata
                                                         .info_photo_hint_reg_no =
                                                         tempval;
-                                                    _regno.text =
+                                                    _north.text =
                                                         tempval;
                                                     setState(() {});
                                                   },
@@ -628,20 +630,17 @@ class _ViewList12State extends State<ViewList12> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_note1
+                                              child: home_map
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_note1)
+                                                  : File(home_map)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_note1),
+                                                File(home_map),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(
@@ -680,7 +679,7 @@ class _ViewList12State extends State<ViewList12> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: (localdata.info_photo_hint_photo_note1?? "") ==''?false:true),
+                                                isCompleted: (home_photo?? "") ==''?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -706,8 +705,6 @@ class _ViewList12State extends State<ViewList12> {
                                                   localdata.isdrafted == 2
                                                       ? null
                                                       : () async {
-                                                    tempval = localdata
-                                                        .info_photo_hint_reg_no;
 
                                                     showModalBottomSheet(
                                                         context:
@@ -739,7 +736,7 @@ class _ViewList12State extends State<ViewList12> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.camera);
+                                                                    localdata.home_photo = await appimagepicker(source: ImageSource.camera);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -753,7 +750,7 @@ class _ViewList12State extends State<ViewList12> {
                                                                 GestureDetector(
                                                                   onTap:
                                                                       () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.gallery);
+                                                                    localdata.home_photo= await appimagepicker(source: ImageSource.gallery);
                                                                     Navigator.pop(context);
                                                                     setState(() {});
                                                                   },
@@ -772,12 +769,7 @@ class _ViewList12State extends State<ViewList12> {
                                                           );
                                                         });
                                                     setState(() {});
-                                                    localdata
-                                                        .info_photo_hint_reg_no =
-                                                        tempval;
-                                                    _regno.text =
-                                                        tempval;
-                                                    setState(() {});
+
                                                   },
                                                 )
                                               ],
@@ -797,20 +789,17 @@ class _ViewList12State extends State<ViewList12> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_note1
+                                              child: home_photo
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_note1)
+                                                  : File(home_photo)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_note1),
+                                                File(home_photo),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(
