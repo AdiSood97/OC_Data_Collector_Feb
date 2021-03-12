@@ -1,308 +1,308 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-MERGED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-MERGED from [:catcher] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/catcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:fluttertoast] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:sqflite] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:device_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/device_info/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:package_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/package_info/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:background_fetch] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/background_fetch/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
-MERGED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:2:1-31:12
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-22:12
-MERGED from [:flutter_plugin_android_lifecycle] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:path_provider] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:image_cropper] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_cropper/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
-MERGED from [:shared_preferences] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
-MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/107c08f983b8c84309e7ed91a147a4ee/ucrop-2.2.6/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/601bf159ada7053cfea0fffbcdeac906/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/1d9e2ed825c193ff89e85df3ede317b4/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efd1825a827eb83b203c724ae6d08d7b/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/7b061ab6812d9e27b59e7076ef2e7959/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/16e8483b2ad95fa6cf6c106961c557c4/activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.transition:transition:1.2.0-rc01] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/007ec03cb3e4db9a19d546941efa4a88/transition-1.2.0-rc01/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/d01c2c56968523b9de09204fda96c641/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/0644282bbbc9f41dfd6bad5de7e4c0e6/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c0c56863c2f7def737ac72dcd7c046c6/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c7de00fa2d917ed7ee17210679404f3f/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efed9eab86b551abb4a6e118e31da9cf/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/a4523bdd2d86a303e32d502cec78bae0/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8ebb25a04c2e58f6a5b4171c29a03353/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/edbd356652de04c8c884d8296bb1db07/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/977c1d60bef3ec6a0903646520428f72/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/6240d2e1eef631e4fe1d9dec01267dbe/exifinterface-1.3.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/48e1e05e7fa0af5511de38e08b97318d/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8f21f197c7a242358397d112429176f8/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/b8691ad95b689b611cce4c0dbf44a2f8/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8184466a9253ef2e75db13a417697a2a/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/94a6ea1a68c7d57d4c2f8970584b06b4/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+MERGED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+MERGED from [:catcher] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\catcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-10:12
+MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:2:1-31:12
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:image_cropper] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-10:12
+MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c7de00fa2d917ed7ee17210679404f3f\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efed9eab86b551abb4a6e118e31da9cf\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a4523bdd2d86a303e32d502cec78bae0\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8ebb25a04c2e58f6a5b4171c29a03353\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edbd356652de04c8c884d8296bb1db07\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\977c1d60bef3ec6a0903646520428f72\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6240d2e1eef631e4fe1d9dec01267dbe\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\48e1e05e7fa0af5511de38e08b97318d\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:3:5-39
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:2:5-51
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:2:5-51
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:2:5-51
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:2:5-51
 	android:versionCode
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:1-41:12
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:9:10-71
-MERGED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:9:10-71
-MERGED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:9:10-71
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:9:10-71
+MERGED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:9:10-71
+MERGED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:9:10-71
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:9:27-69
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:9:27-69
 uses-permission#android.permission.CAMERA
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:10:10-70
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:10:10-70
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:10:27-67
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:10:27-67
 uses-feature#android.hardware.camera
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:11:10-65
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:11:10-65
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:11:24-62
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:11:24-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:12:10-85
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:12:10-85
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:12:27-82
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:12:27-82
 application
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:14:5-40:19
-MERGED from [:background_fetch] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/background_fetch/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-8:19
-MERGED from [:background_fetch] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/background_fetch/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-8:19
-MERGED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:15:5-29:19
-MERGED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:15:5-29:19
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-20:19
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-20:19
-MERGED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
-MERGED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
-MERGED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8f21f197c7a242358397d112429176f8/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8f21f197c7a242358397d112429176f8/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:14:5-40:19
+MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-8:19
+MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-8:19
+MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:15:5-29:19
+MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:15:5-29:19
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-20:19
+MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:17:9-39
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:17:9-39
 	android:icon
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:18:9-45
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:18:9-45
 	tools:replace
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:15:9-38
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:15:9-38
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:16:9-57
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:16:9-57
 activity#com.sparc.kdatacollector.MainActivity
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:19:9-30:20
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:19:9-30:20
 	android:launchMode
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:21:13-43
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:21:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:24:13-47
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:24:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:25:13-55
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:25:13-55
 	android:configChanges
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:23:13-163
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:23:13-163
 	android:theme
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:22:13-47
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:22:13-47
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:20:13-41
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:20:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:26:13-29:29
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:26:13-29:29
 action#android.intent.action.MAIN
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:27:17-68
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:27:17-68
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:27:25-66
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:28:17-76
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:28:17-76
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:28:27-74
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:28:27-74
 activity#com.yalantis.ucrop.UCropActivity
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:31:9-34:71
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:31:9-34:71
 	android:screenOrientation
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:33:13-49
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:33:13-49
 	android:theme
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:34:13-69
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:34:13-69
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:32:13-60
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:32:13-60
 meta-data#flutterEmbedding
-ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:37:9-39:33
+ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:37:9-39:33
 	android:value
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:39:13-30
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:39:13-30
 	android:name
-		ADDED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml:38:13-44
+		ADDED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml:38:13-44
 uses-sdk
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-MERGED from [:catcher] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/catcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:catcher] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/catcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:fluttertoast] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:device_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/device_info/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:device_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/device_info/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:package_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/package_info/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:package_info] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/package_info/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:background_fetch] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/background_fetch/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:background_fetch] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/background_fetch/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:7:5-9:41
-MERGED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:7:5-9:41
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_cropper] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_cropper/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_cropper] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_cropper/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/107c08f983b8c84309e7ed91a147a4ee/ucrop-2.2.6/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.yalantis:ucrop:2.2.6] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/107c08f983b8c84309e7ed91a147a4ee/ucrop-2.2.6/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/601bf159ada7053cfea0fffbcdeac906/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/601bf159ada7053cfea0fffbcdeac906/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/1d9e2ed825c193ff89e85df3ede317b4/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/1d9e2ed825c193ff89e85df3ede317b4/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efd1825a827eb83b203c724ae6d08d7b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efd1825a827eb83b203c724ae6d08d7b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/7b061ab6812d9e27b59e7076ef2e7959/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/7b061ab6812d9e27b59e7076ef2e7959/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/16e8483b2ad95fa6cf6c106961c557c4/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/16e8483b2ad95fa6cf6c106961c557c4/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0-rc01] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/007ec03cb3e4db9a19d546941efa4a88/transition-1.2.0-rc01/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0-rc01] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/007ec03cb3e4db9a19d546941efa4a88/transition-1.2.0-rc01/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/d01c2c56968523b9de09204fda96c641/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/d01c2c56968523b9de09204fda96c641/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/0644282bbbc9f41dfd6bad5de7e4c0e6/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/0644282bbbc9f41dfd6bad5de7e4c0e6/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c0c56863c2f7def737ac72dcd7c046c6/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c0c56863c2f7def737ac72dcd7c046c6/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c7de00fa2d917ed7ee17210679404f3f/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/c7de00fa2d917ed7ee17210679404f3f/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efed9eab86b551abb4a6e118e31da9cf/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/efed9eab86b551abb4a6e118e31da9cf/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/4b34e5ce3af2e43d0f401e15e1a42ecb/core-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/a4523bdd2d86a303e32d502cec78bae0/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/a4523bdd2d86a303e32d502cec78bae0/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8ebb25a04c2e58f6a5b4171c29a03353/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8ebb25a04c2e58f6a5b4171c29a03353/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/edbd356652de04c8c884d8296bb1db07/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/edbd356652de04c8c884d8296bb1db07/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/977c1d60bef3ec6a0903646520428f72/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/977c1d60bef3ec6a0903646520428f72/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/6240d2e1eef631e4fe1d9dec01267dbe/exifinterface-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/6240d2e1eef631e4fe1d9dec01267dbe/exifinterface-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/48e1e05e7fa0af5511de38e08b97318d/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/48e1e05e7fa0af5511de38e08b97318d/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8f21f197c7a242358397d112429176f8/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8f21f197c7a242358397d112429176f8/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/b8691ad95b689b611cce4c0dbf44a2f8/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/b8691ad95b689b611cce4c0dbf44a2f8/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8184466a9253ef2e75db13a417697a2a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/8184466a9253ef2e75db13a417697a2a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/94a6ea1a68c7d57d4c2f8970584b06b4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/94a6ea1a68c7d57d4c2f8970584b06b4/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
-INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+MERGED from [:catcher] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\catcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:catcher] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\catcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:7:5-9:41
+MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:7:5-9:41
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_cropper] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_cropper] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c7de00fa2d917ed7ee17210679404f3f\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c7de00fa2d917ed7ee17210679404f3f\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efed9eab86b551abb4a6e118e31da9cf\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efed9eab86b551abb4a6e118e31da9cf\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\4b34e5ce3af2e43d0f401e15e1a42ecb\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a4523bdd2d86a303e32d502cec78bae0\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\a4523bdd2d86a303e32d502cec78bae0\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8ebb25a04c2e58f6a5b4171c29a03353\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8ebb25a04c2e58f6a5b4171c29a03353\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edbd356652de04c8c884d8296bb1db07\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\edbd356652de04c8c884d8296bb1db07\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\977c1d60bef3ec6a0903646520428f72\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\977c1d60bef3ec6a0903646520428f72\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6240d2e1eef631e4fe1d9dec01267dbe\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6240d2e1eef631e4fe1d9dec01267dbe\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\48e1e05e7fa0af5511de38e08b97318d\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\48e1e05e7fa0af5511de38e08b97318d\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
+INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/android/app/src/debug/AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:11:5-81
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:11:22-78
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:12:5-68
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:12:5-68
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:12:22-65
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.GET_TASKS
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:13:5-68
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:13:5-68
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:13:22-65
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:13:22-65
 receiver#com.transistorsoft.tsbackgroundfetch.FetchAlarmReceiver
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:16:9-92
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:16:9-92
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:16:19-89
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:16:19-89
 service#com.transistorsoft.tsbackgroundfetch.FetchJobService
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:18:9-21:72
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:18:9-21:72
 	android:exported
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:20:13-36
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:20:13-36
 	android:permission
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:21:13-69
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:21:13-69
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:19:13-80
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:19:13-80
 receiver#com.transistorsoft.tsbackgroundfetch.BootReceiver
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:23:9-28:20
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:23:9-28:20
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:23:19-83
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:23:19-83
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:24:13-27:29
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:24:13-27:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:25:17-79
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:25:17-79
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:25:25-76
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:25:25-76
 action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:26:17-84
+ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:26:17-84
 	android:name
-		ADDED from [tsbackgroundfetch-0.4.5.aar] /Users/deeprodge/.gradle/caches/transforms-2/files-2.1/623fa6c9bafe22191d0bee32ec7f8849/tsbackgroundfetch-0.4.5/AndroidManifest.xml:26:25-81
+		ADDED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:26:25-81
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-81
+ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-78
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-19:20
+ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-47
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
 	android:authorities
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-74
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
 	android:exported
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
 	android:name
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-82
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-18:75
+ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
 	android:resource
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-72
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 	android:name
-		ADDED from [:image_picker] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-67
+		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-79
+ADDED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-76
+		ADDED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-76
+ADDED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-76
 	android:name
-		ADDED from [:connectivity] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-73
+		ADDED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-73
 provider#com.dataxad.flutter_mailer.FlutterMailerFileProvider
-ADDED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+ADDED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions
-		ADDED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+		ADDED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
 	android:authorities
-		ADDED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-64
+		ADDED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-64
 	android:exported
-		ADDED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+		ADDED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [:flutter_mailer] /Users/deeprodge/StudioProjects/OC_Data_Collector_Feb-main/build/flutter_mailer/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-80
+		ADDED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-80

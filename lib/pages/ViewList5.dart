@@ -395,6 +395,7 @@ class _ViewList5State extends State<ViewList5> {
       govt_property=preferences.getString('govt_property') ?? "" ;
       specified_current_use=preferences.getString('specified_current_use') ?? "" ;
       unspecified_current_use_type=preferences.getString('unspecified_current_use_type')??'';
+      redeemable_property=preferences.getString('redeemable_property');
 
     });
   }
@@ -700,7 +701,7 @@ class _ViewList5State extends State<ViewList5> {
                                             ? TextDirection.ltr
                                             : TextDirection.rtl,
                                         children: <Widget>[
-                                          completedcheckbox(isCompleted: getRedeem(redeemable_property) ?? "" ==''?false:true),
+                                          completedcheckbox(isCompleted: getRedeem(redeemable_property) ==''?false:true),
                                           /*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),

@@ -55,6 +55,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
   }
 
   LocalPropertySurvey localdata;
+  SurveyAssignment surveyAssignment;
   var _formkey = GlobalKey<FormState>();
   FocusNode _firstsurveyor;
   FocusNode _secondsurveyor;
@@ -94,10 +95,10 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
           if (widget.surveyAssignment != null) {
             localdata.taskid = widget.surveyAssignment.id;
           }
-          if (localdata.editmode == 1) {
+          /*if (localdata.editmode == 1) {
             localdata = Provider.of<DBHelper>(context).singlepropertysurveys;
             localdata.editmode = 1;
-          }
+          }*/
           if (widget.surveyAssignment != null) {
             localdata.first_surveyor_name = surveyDetails.first_name;
             localdata.senond_surveyor_name =
@@ -247,6 +248,8 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
   @override
   void initState() {
     localdata = new LocalPropertySurvey();
+    surveyAssignment=new SurveyAssignment();
+    print("SurveyAssignment is :=${surveyAssignment}");
     _firstsurveyor = new FocusNode();
     _secondsurveyor = new FocusNode();
     _technicalsupport = new FocusNode();
@@ -255,7 +258,6 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     currentSurveyName='${surveyDetails['first_name']} ${surveyDetails['last_name']}';
     print("97959-----------===================");
     print(widget.localsurveykey);
-
     print(
         "current survery details ====== ${currentSurveyId},${currentSurveyName}");
    // print("survery list ====== ${surveyList}");
@@ -263,15 +265,15 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     if (widget.localdata != null) {
       localdata = widget.localdata;
     }
-    if (widget.surveyAssignment != null) {
+    /*if (widget.surveyAssignment != null) {
       localdata.first_surveyor_name = widget.surveyDetails.surveyoronename;
       localdata.senond_surveyor_name = widget.surveyAssignment.surveyortwoname;
       localdata.technical_support_name = widget.surveyAssignment.teamleadname;
-    }
+    }*/
     if (!(widget.localsurveykey?.isEmpty ?? true)) {
       Future.delayed(Duration.zero).then((_) {
         Provider.of<DBHelper>(context).getSingleProperty(
-            taskid: widget.surveyAssignment.id,
+            taskid: localdata.taskid,
             localkey: widget.localsurveykey);
       });
     }
@@ -293,9 +295,9 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     if (!(widget.localsurveykey?.isEmpty ?? true)) {
       localdata = Provider.of<DBHelper>(context).singlepropertysurveys;
       localdata.editmode = 1;
-      localdata.first_surveyor_name = widget.surveyAssignment.surveyoronename;
-      localdata.senond_surveyor_name = widget.surveyAssignment.surveyortwoname;
-      localdata.technical_support_name = widget.surveyAssignment.teamleadname;
+      localdata.first_surveyor_name = localdata.first_surveyor_name;
+      localdata.senond_surveyor_name = localdata.senond_surveyor_name;
+      localdata.technical_support_name = localdata.technical_support_name;
     }
     return Scaffold(
       appBar: AppBar(
@@ -548,7 +550,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                     }
                                   },
                                   onSaved: (dynamic value) {
-                                    print("+++++++++++++++++++++3333++${value['_id']}");
+                                    //print("+++++++++++++++++++++3333++${value['_id']}");
                                     localdata.first_surveyor_name =
                                         '${value['first_name'].trim()} ${value['last_name'].trim()}';
                                     localdata.surveyoroneid = value['_id'].trim();
