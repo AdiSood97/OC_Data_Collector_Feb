@@ -14,6 +14,7 @@ import './surveyinfo.dart';
 import '../models/surveyAssignment.dart';
 import '../controllers/appsync.dart';
 import './task.dart';
+import 'package:kapp/EditScreen/EditList1.dart';
 
 class SurveyPage extends StatefulWidget {
   SurveyPage({this.surveyassignment, this.surveyDetails, this.surveyList});
@@ -91,8 +92,8 @@ class _SurveyPageState extends State<SurveyPage> {
                             ? //view
                             IconButton(
                                 icon: Icon(Icons.remove_red_eye),
-                                onPressed: () {
-                                  Navigator.push(
+                                onPressed: () async{
+                                /*  Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (BuildContext context) =>
@@ -103,18 +104,10 @@ class _SurveyPageState extends State<SurveyPage> {
                                             surveydata.local_property_key,
                                       ),
                                     ),
-                                  );
-                                })
-                            : //edit
-                            IconButton(
-                                iconSize: 25,
-                                icon: Icon(
-                                  Icons.remove_red_eye,
-                                  color: Colors.blue,
-                                ),
-                                onPressed: () async{
+                                  );*/
+                                  print("Drafetd Number Is:=${surveydata.isdrafted}");
                                   print("13136444+++++++++++++++++++++++");
-                                 print("Survey Id=${surveydata.property_dispte_subject_to}");
+                                  print("Survey Id=${surveydata.property_dispte_subject_to}");
                                   SharedPreferences pref=await SharedPreferences.getInstance();
                                   pref.setString('id', "${surveydata.id}");
                                   pref.setString('first_surveyor_name', surveydata.first_surveyor_name);
@@ -207,7 +200,22 @@ class _SurveyPageState extends State<SurveyPage> {
                                   pref.setString('area_unit_business_area', surveydata.area_unit_business_area);
                                   pref.setString('area_unit_total_no_unit', surveydata.area_unit_total_no_unit);
                                   pref.setString('area_unit_business_units', surveydata.area_unit_business_units);
-                                 /* Navigator.push(
+                                  Navigator.push(context, MaterialPageRoute(builder:(context)=>EditPage(
+                                    surveyList: widget.surveyList,
+                                    surveyDeatils: widget.surveyDetails,
+                                    localsurveykey:
+                                    surveydata.local_property_key,
+                                  )));
+                                })
+                            : //edit
+                            IconButton(
+                                iconSize: 25,
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: Colors.blue,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (BuildContext context) =>
@@ -220,16 +228,9 @@ class _SurveyPageState extends State<SurveyPage> {
                                             surveyList: widget.surveyList,
                                           ),
                                     ),
-                                  );*/
-                                   Navigator.push(context, MaterialPageRoute(builder:(context)=>EditPage(
-                                    surveyList: widget.surveyList,
-                                     surveyDeatils: widget.surveyDetails,
-                                       localsurveykey:
-                                       surveydata.local_property_key,
-                                  )));
+                                  );
                                 },
                               ),
-
                         ///delete icon
                         surveydata.isdrafted == 2
                             ? SizedBox()
@@ -501,6 +502,8 @@ class _SurveyPageState extends State<SurveyPage> {
           builder: (BuildContext context) => SurveyInfoPage(
             surveyDetails: surveyDetails,
             surveyList: surveyList,
+            localdata: null,
+            localsurveykey: null,
           ),
         ),
       );
@@ -511,6 +514,7 @@ class _SurveyPageState extends State<SurveyPage> {
   void initState() {
     super.initState();
     print("Survey assignment---------123");
+    print("SurveyAssignment is :=${widget.surveyassignment}");
     //print(surveyDetails);
   }
   @override
@@ -793,6 +797,7 @@ class SurveySearch extends SearchDelegate<String> {
                                         ),
                                       ),
                                     );
+
                                   })
                               : IconButton(
                                   iconSize: 25,
@@ -1280,6 +1285,8 @@ class _UploadDataState extends State<UploadData> {
                                     });
                                     Future.delayed(Duration(seconds: 1), () {
                                       Navigator.of(context).pop(false);
+                                      /*Navigator.pushReplacement(context,
+                                          MaterialPageRoute(builder: (BuildContext context) => EditPage()));*/
                                     });
                                   } else {
                                     setState(() {

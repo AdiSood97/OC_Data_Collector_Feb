@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList11.dart';
+import 'package:kapp/pages/ViewList12.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:kapp/widgets/appformcards.dart';
@@ -84,13 +85,21 @@ class _ViewList10State extends State<ViewList10> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                child: ViewList11(
-                  //localdata: localdata,
-                ),
-                type: PageTransitionType.rightToLeft));
+        if (property_type == "1") {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList12(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        } else {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList11(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        }
       },
       child: Container(
         child: Row(
@@ -134,7 +143,7 @@ class _ViewList10State extends State<ViewList10> {
       ),
     );
   }
-  String tempval = "";
+  String tempval = "", property_type='';
   String info_photo_hint_sukuk_number="",info_photo_hint_cover_note="",info_photo_hint_note_page="",info_photo_hint_reg_no="";
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
@@ -143,6 +152,7 @@ class _ViewList10State extends State<ViewList10> {
       info_photo_hint_cover_note=preferences.getString('info_photo_hint_cover_note');
       info_photo_hint_note_page=preferences.getString('info_photo_hint_note_page');
       info_photo_hint_reg_no=preferences.getString('info_photo_hint_reg_no');
+      property_type=preferences.getString('property_type');
     });
   }
   @override

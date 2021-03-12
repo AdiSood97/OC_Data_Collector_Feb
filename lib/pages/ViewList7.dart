@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList8.dart';
+import 'package:kapp/pages/ViewList9.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:page_transition/page_transition.dart';
@@ -115,13 +116,23 @@ class _ViewList7State extends State<ViewList7> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                child: ViewList8(
-                  //localdata: localdata,
-                ),
-                type: PageTransitionType.rightToLeft));
+        if ((current_use_of_property == "2") ||
+            (current_use_of_property == "3")) {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList8(
+                    //localdata: localdata,
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        }
+        else {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList9(),
+                  type: PageTransitionType.rightToLeft));
+        }
       },
       child: Container(
         child: Row(
@@ -165,12 +176,13 @@ class _ViewList7State extends State<ViewList7> {
       ),
     );
   }
-  String use_in_property_doc="",type_of_use_other='';
+  String use_in_property_doc="",type_of_use_other='', current_use_of_property='';
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
     setState(() {
       use_in_property_doc=preferences.getString('use_in_property_doc');
       type_of_use_other=preferences.getString('type_of_use_other');
+      current_use_of_property=preferences.getString('current_use_of_property');
       print("Property Type is =${use_in_property_doc}");
 
     });

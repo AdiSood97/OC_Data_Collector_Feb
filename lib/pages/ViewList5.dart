@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList6.dart';
+import 'package:kapp/pages/ViewList8.dart';
+import 'package:kapp/pages/ViewList9.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:page_transition/page_transition.dart';
@@ -333,13 +335,31 @@ class _ViewList5State extends State<ViewList5> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                child: ViewList6(
-                  //localdata: localdata,
-                ),
-                type: PageTransitionType.rightToLeft));
+        if (property_have_document == "1") {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList6(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        } else {
+          if ((current_use_of_property == "2") ||
+              (current_use_of_property == "3")) {
+            Navigator.pushReplacement(
+                context,
+                PageTransition(
+                    child: ViewList8(
+                    ),
+                    type: PageTransitionType.rightToLeft));
+          } else {
+            Navigator.pushReplacement(
+                context,
+                PageTransition(
+                    child: ViewList9(
+                    ),
+                    type: PageTransitionType.rightToLeft));
+          }
+        }
       },
       child: Container(
         child: Row(
@@ -395,6 +415,7 @@ class _ViewList5State extends State<ViewList5> {
       govt_property=preferences.getString('govt_property') ?? "" ;
       specified_current_use=preferences.getString('specified_current_use') ?? "" ;
       unspecified_current_use_type=preferences.getString('unspecified_current_use_type')??'';
+      redeemable_property=preferences.getString('redeemable_property');
 
     });
   }
@@ -700,7 +721,7 @@ class _ViewList5State extends State<ViewList5> {
                                             ? TextDirection.ltr
                                             : TextDirection.rtl,
                                         children: <Widget>[
-                                          completedcheckbox(isCompleted: getRedeem(redeemable_property) ?? "" ==''?false:true),
+                                          completedcheckbox(isCompleted: getRedeem(redeemable_property) ==''?false:true),
                                           /*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),

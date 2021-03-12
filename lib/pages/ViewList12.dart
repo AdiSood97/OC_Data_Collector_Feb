@@ -5,6 +5,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ListView13.dart';
+import 'package:kapp/pages/ViewList16.dart';
+import 'package:kapp/pages/ViewList17.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:kapp/widgets/appformcards.dart';
@@ -85,13 +87,35 @@ class _ViewList12State extends State<ViewList12> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                child: ViewList13(
-                  //localdata: localdata,
-                ),
-                type: PageTransitionType.rightToLeft));
+        if (current_use_of_property == "6") {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList16(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        } else if (current_use_of_property == "7") {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList17(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        } else if (current_use_of_property == "10") {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList17(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        } else {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList13(
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        }
       },
       child: Container(
         child: Row(
@@ -135,7 +159,7 @@ class _ViewList12State extends State<ViewList12> {
       ),
     );
   }
-  String tempval = "";
+  String tempval = "",current_use_of_property='' ;
   String boundaryinfonote="",fore_limits_east="",fore_limits_west="",fore_limits_south="",fore_limits_north="", home_map = '', home_photo = '';
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
@@ -147,6 +171,7 @@ class _ViewList12State extends State<ViewList12> {
       fore_limits_north=preferences.getString('fore_limits_north');
       home_map=preferences.getString('home_map');
       home_photo=preferences.getString('home_photo');
+      current_use_of_property=preferences.getString('current_use_of_property');
     });
   }
   @override

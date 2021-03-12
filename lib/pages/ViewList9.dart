@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList10.dart';
+import 'package:kapp/pages/ViewList11.dart';
+import 'package:kapp/pages/ViewList12.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:page_transition/page_transition.dart';
@@ -99,13 +101,35 @@ class _ViewList9State extends State<ViewList9> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                child: ViewList10(
-                  //localdata: localdata,
-                ),
-                type: PageTransitionType.rightToLeft));
+        if (cityzenship_notice == "2") {
+          if (property_type == "2") {
+            Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList11(
+                   // localdata: localdata,
+                  ),
+                  type: PageTransitionType.rightToLeft),
+            );
+          } else {
+            Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList12(
+                    // localdata: localdata,
+                  ),
+                  type: PageTransitionType.rightToLeft),
+            );
+          }
+        } else {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  child: ViewList10(
+                    //localdata: localdata,
+                  ),
+                  type: PageTransitionType.rightToLeft));
+        }
       },
       child: Container(
         child: Row(
@@ -149,7 +173,7 @@ class _ViewList9State extends State<ViewList9> {
       ),
     );
   }
-  String tempval = "";
+  String tempval = "", cityzenship_notice='', property_type='';
   String first_partner_name="",first_partner_surname="",first_partner_boy="",first_partner__father="",first_partner_name_gender="",first_partner_name_phone="",first_partner_name_email="",first_partner_name_property_owner='',first_partner_name_mere_individuals='';
   Future getData() async {
 
@@ -164,6 +188,9 @@ class _ViewList9State extends State<ViewList9> {
       first_partner_name_email=preferences.getString('first_partner_name_email');
       first_partner_name_property_owner=preferences.getString('first_partner_name_property_owner');
       first_partner_name_mere_individuals=preferences.getString('first_partner_name_mere_individuals');
+      cityzenship_notice=preferences.getString('cityzenship_notice');
+      property_type=preferences.getString('property_type');
+
 
     });
   }
