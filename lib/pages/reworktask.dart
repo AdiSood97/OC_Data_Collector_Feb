@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/appdrawer.dart';
 import '../localization/app_translations.dart';
 import '../controllers/reworktask.dart';
@@ -32,6 +34,8 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
     }
     return result;
   }
+
+
 
   Color workstatuscolor({int status}) {
     Color result = Colors.transparent;
@@ -70,7 +74,7 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
             Align(
               alignment: Alignment.topCenter,
               child: Text(
-                id.province + "-" + id.nahia + "-" + id.gozar+"-"+id.block,
+                id.province + "-" + id.nahia + "-" + id.gozar+"-"+id.block+"-"+id.parcelno+"-"+id.unit,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
@@ -113,9 +117,11 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
                   MaterialPageRoute(
                     builder: (BuildContext context) => RewokListPage(
                       sid: id,
+
                     ),
                   ),
                 );
+                print(id);
               },
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -145,9 +151,15 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
       ),
     );
   }
+  @override
+/*  Future<void> initState() async {
+    super.initState();
+    await _fetchJobs();
+  }*/
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
@@ -160,9 +172,13 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
       body: FutureBuilder(
         future: ReworkTask().getReworkAssignments(),
         builder: (context, AsyncSnapshot<List<ReworkAssignment>> assignments) {
+          //print(assignments);
           if (assignments.connectionState == ConnectionState.done &&
               assignments.hasData) {
+
             List<ReworkAssignment> data = assignments.data;
+            print(data[0].surveyoronename);
+           //_fetchJobs();
             return Column(
               children: <Widget>[
                 data.isEmpty ?? true

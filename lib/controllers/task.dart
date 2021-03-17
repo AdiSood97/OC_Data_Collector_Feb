@@ -33,7 +33,8 @@ class TaskModel with ChangeNotifier {
           connectivityResult == ConnectivityResult.wifi) {
         var responce = await http.get(
             Configuration.apiurl +
-                'taskassignment?\$or[0][surveyor_1]=${preferences.getString('userid')}&\$or[1][surveyor_2]=${preferences.getString('userid')}&task_status[\$ne]=Completed',
+                'taskassignment',
+                    //'?\$or[0][surveyor_1]=${preferences.getString('userid')}&\$or[1][surveyor_2]=${preferences.getString('userid')}&task_status[\$ne]=Completed',
             headers: {
               "Content-Type": "application/json",
               "Authorization": preferences.getString("accesstoken")
@@ -121,9 +122,11 @@ class TaskModel with ChangeNotifier {
       });
       if (responce.statusCode == 200) {
         Map responseJson = json.decode(responce.body);
-        result = responseJson['first_name'] + " " + responseJson['last_name'];
+        //result = responseJson['first_name'] + " " + responseJson['last_name'];
+        if(responseJson['first_name'] != null){
+        result = responseJson['first_name'] + " " + responseJson['last_name'];}
       } else if (responce.statusCode == 401) {
-        AuthModel().generateRefreshToken().then((_) {
+        AuthModel().generateRefreshToken().then((_) { ///TOKEN REFRESHING MANY TIMES
           getUserName(userid: userid);
         });
       }

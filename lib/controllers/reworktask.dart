@@ -9,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity/connectivity.dart';
 //import 'package:catcher/catcher_plugin.dart';
 import 'package:dio/dio.dart';
-
 import '../configs/configuration.dart';
 import '../utils/db_helper.dart';
 import '../models/reworkassignment.dart';
@@ -39,7 +38,8 @@ class ReworkTask with ChangeNotifier {
           connectivityResult == ConnectivityResult.wifi) {
         var responce = await http.get(
             Configuration.apiurl +
-                'taskreassignment?\$or[0][surveyor1]=${preferences.getString('userid')}&\$or[1][surveyor2]=${preferences.getString('userid')}&surveystatus=open',
+                'taskreassignment',
+                    //'?\$or[0][surveyor1]=${preferences.getString('userid')}&\$or[1][surveyor2]=${preferences.getString('userid')}&surveystatus=open',
             headers: {
               "Content-Type": "application/json",
               "Authorization": preferences.getString("accesstoken")
@@ -50,6 +50,7 @@ class ReworkTask with ChangeNotifier {
           if ((i != null) || (i.isNotEmpty)) {
             _reworkAssignments =
                 i.map((model) => ReworkAssignment.fromJson(model)).toList();
+            //print('${_reworkAssignments}');
           }
         } else if (responce.statusCode == 401) {
           var email = preferences.getString('email');

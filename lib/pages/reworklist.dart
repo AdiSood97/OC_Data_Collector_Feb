@@ -1,6 +1,9 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/reworkassignment.dart';
 import '../localization/app_translations.dart';
@@ -13,6 +16,7 @@ import './surveylist.dart';
 class RewokListPage extends StatefulWidget {
   RewokListPage({this.sid});
   final ReworkAssignment sid;
+
   @override
   _RewokListPageState createState() => _RewokListPageState();
 }
@@ -23,7 +27,42 @@ class _RewokListPageState extends State<RewokListPage> {
     return AppTranslations.of(context).text(key);
   }
 
+  List surveyList;
+  bool _prograssbar = true;
+
+  @override
+  void initState() {
+    convertToSurveyAssignment(reworkAssignment: widget.sid);
+    super.initState();
+    _fetchJobs();
+  }
+
+
+  void _fetchJobs() async {
+    var preferences = await SharedPreferences.getInstance();
+    var role_id = preferences.getString("new_role_id");
+    print("+++++-----------888888888888888888888888888");
+
+    print(role_id);
+    final jobsListAPIUrl =
+        'http://13.234.225.179:3002/users?role_id=${role_id}';
+    final response = await http.get(jobsListAPIUrl);
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      print("surveylist ============ ${data1}");
+      setState(() {
+        surveyList = data1["data"];
+        _prograssbar = false;
+      });
+      // return jsonResponse.map((job) => new Job.fromJson(job)).toList();
+    } else {
+      throw Exception('Failed to load jobs from API');
+    }
+  }
+
   Widget listcard({LocalPropertySurvey surveydata}) {
+    print("surveylist ============ ${surveyList[0]['first_name']}");
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -86,6 +125,8 @@ class _RewokListPageState extends State<RewokListPage> {
                                         surveyAssignment: surveyAssignment,
                                         localsurveykey:
                                             surveydata.local_property_key,
+                                            localdata: surveydata,
+                                            surveyList: surveyList,
                                       ),
                                     ),
                                   );
@@ -105,6 +146,8 @@ class _RewokListPageState extends State<RewokListPage> {
                                         surveyAssignment: surveyAssignment,
                                         localsurveykey:
                                             surveydata.local_property_key,
+                                            localdata: surveydata,
+                                            surveyList: surveyList,
                                       ),
                                     ),
                                   );
@@ -312,11 +355,6 @@ class _RewokListPageState extends State<RewokListPage> {
     surveyAssignment.reworkstatus = reworkAssignment.status;
   }
 
-  @override
-  void initState() {
-    convertToSurveyAssignment(reworkAssignment: widget.sid);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -330,7 +368,11 @@ class _RewokListPageState extends State<RewokListPage> {
               fontWeight: FontWeight.bold),
         ),
       ),
-      body: FutureBuilder(
+      body: _prograssbar == true
+          ? new Center(
+        child: CircularProgressIndicator(),
+      )
+          : FutureBuilder(
         future: DBHelper().getpropertysurveys(
             localkey: (widget.sid.province +
                 widget.sid.municipality +
@@ -344,13 +386,16 @@ class _RewokListPageState extends State<RewokListPage> {
           if (surveydata.connectionState == ConnectionState.done &&
               surveydata.hasData) {
             List<LocalPropertySurvey> dbdata = surveydata.data;
+            print('osidjsoidfn ${dbdata[0].first_surveyor_name}');
             return SafeArea(
               child: Column(
                 children: <Widget>[
                   Expanded(
                     child: ListView.builder(
+
                       itemCount: dbdata?.isEmpty ?? true ? 0 : dbdata.length,
                       itemBuilder: (context, index) {
+                        print(dbdata[index].province);
                         return listcard(surveydata: dbdata[index]);
                       },
                     ),

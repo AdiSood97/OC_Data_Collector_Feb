@@ -84,7 +84,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
   Widget nextbutton() {
     return GestureDetector(
       onTap: () async {
-        localdata.taskid = surveyDetails['_id'];
+        //localdata.taskid = surveyDetails['_id'];
         if (!(_formkey.currentState.validate())) {
           return;
         } else {
@@ -100,7 +100,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
             localdata.editmode = 1;
           }*/
           if (widget.surveyAssignment != null) {
-            localdata.first_surveyor_name = surveyDetails.first_name;
+            localdata.first_surveyor_name =  widget.surveyAssignment.surveyortwoname;
             localdata.senond_surveyor_name =
                 widget.surveyAssignment.surveyortwoname;
             localdata.technical_support_name =
@@ -253,28 +253,35 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     _firstsurveyor = new FocusNode();
     _secondsurveyor = new FocusNode();
     _technicalsupport = new FocusNode();
-    localdata.taskid=surveyDetails["_id"];
-    currentSurveyId=surveyDetails['_id'];
-    currentSurveyName='${surveyDetails['first_name']} ${surveyDetails['last_name']}';
+    if(surveyDetails != null){
+      localdata.taskid = surveyDetails["_id"];
+      //localdata.taskid = surveyDetails.first_surveyor_name;
+      currentSurveyId = surveyDetails['_id'];
+      currentSurveyName =
+          '${surveyDetails['first_name']} ${surveyDetails['last_name']}';
+    }
     print("97959-----------===================");
     print(widget.localsurveykey);
-    print(
-        "current survery details ====== ${currentSurveyId},${currentSurveyName}");
-   // print("survery list ====== ${surveyList}");
+    print("current survery details ====== ${currentSurveyId},${currentSurveyName}");
+   //print("survery list ====== ${surveyList}");
     defaultSurveyId1 = '';
     if (widget.localdata != null) {
       localdata = widget.localdata;
     }
-    /*if (widget.surveyAssignment != null) {
-      localdata.first_surveyor_name = widget.surveyDetails.surveyoronename;
+    if (widget.surveyAssignment != null) {
+      localdata.first_surveyor_name = widget.surveyAssignment.surveyoronename;
       localdata.senond_surveyor_name = widget.surveyAssignment.surveyortwoname;
       localdata.technical_support_name = widget.surveyAssignment.teamleadname;
-    }*/
+    }
     if (!(widget.localsurveykey?.isEmpty ?? true)) {
       Future.delayed(Duration.zero).then((_) {
-        localdata.taskid=surveyDetails["_id"];
+        /*if (surveyDetails == null){
+          localdata.taskid = widget.localdata.taskid;
+        }else {
+          localdata.taskid = surveyDetails["_id"];
+        }*/
         Provider.of<DBHelper>(context, listen: false).getSingleProperty(
-            taskid: localdata.taskid,
+            taskid: (surveyDetails!=null)?surveyDetails['_id']:widget.localdata.taskid,
             localkey: widget.localsurveykey);
       });
     }
@@ -300,6 +307,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
       localdata.senond_surveyor_name = localdata.senond_surveyor_name;
       localdata.technical_support_name = localdata.technical_support_name;
     }
+    print('pqoowieuuwiefni ${localdata.first_surveyor_name}');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -535,18 +543,18 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   hinttextkey:
                                       setapptext(key: 'key_enter_1st_surveyor'),
                                   fieldfocus: _firstsurveyor,
-                                 value: getValueForName(localdata.surveyoroneid, surveyList),
+                                 //value: getValueForName(localdata.surveyoroneid, surveyList),
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) {
                                     _firstsurveyor.unfocus();
                                     FocusScope.of(context)
                                         .requestFocus(_secondsurveyor);
                                   },
-                                  initvalue:
+                                  /*initvalue:
                                       surveyDetails["first_name"]?.isEmpty ??
                                               true
                                           ? ""
-                                          : surveyDetails["first_name"],
+                                          : surveyDetails["first_name"],*/
                                   validator: (dynamic value) {
                                     if (value.trim().isEmpty) {
                                       return setapptext(
@@ -576,7 +584,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   }),
                               formcardtextfield1(
                                   enable: false,
-                                  value: getValueForName(localdata.surveyortwoid, surveyList),
+                                  //value: getValueForName(localdata.surveyortwoid, surveyList),
                                   fieldrequired: true,
                                   surveyList: surveyList,
                                   headerlablekey:
@@ -595,11 +603,11 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                     FocusScope.of(context)
                                         .requestFocus(_technicalsupport);
                                   },
-                                  initvalue:
+                                  /*initvalue:
                                       localdata.senond_surveyor_name?.isEmpty ??
                                               true
                                           ? ""
-                                          : localdata.senond_surveyor_name,
+                                          : localdata.senond_surveyor_name,*/
                                   validator: (dynamic value) {
                                     if (value['_id'].trim().isEmpty) {
                                       return setapptext(
@@ -619,7 +627,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   }),
                               formcardtextfield1(
                                   enable: false,
-                                  value: getValueForName(localdata.surveyleadid, surveyList),
+                                 // value: getValueForName(localdata.surveyleadid, surveyList),
                                   fieldrequired: true,
                                   surveyList: surveyList,
                                   headerlablekey: setapptext(
@@ -636,11 +644,11 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   onFieldSubmitted: (_) {
                                     _technicalsupport.unfocus();
                                   },
-                                  initvalue: localdata.technical_support_name
+                                  /*initvalue: localdata.technical_support_name
                                               ?.isEmpty ??
                                           true
                                       ? ""
-                                      : localdata.technical_support_name,
+                                      : localdata.technical_support_name,*/
                                   validator: (dynamic value) {},
                                   onSaved: (dynamic value) {
                                     localdata.technical_support_name =

@@ -32,7 +32,7 @@ class _EditPageState extends State<EditPage> {
   FocusNode _technicalsupport;
   CheckColor radioValue;
   LocalPropertySurvey localdata= LocalPropertySurvey();
-  String surveyFirstName="",surveySecondName="",surveyThirdName="";
+  String surveyFirstName="",surveySecondName="",surveyThirdName="",province='',city='',area='',block='',pass='',part_number='',unit_number='';
 
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
@@ -205,6 +205,13 @@ Future getData() async{
       surveyFirstName=preferences.get('first_surveyor_name');
       surveySecondName=preferences.get('senond_surveyor_name');
       surveyThirdName=preferences.get('technical_support_name');
+      province=preferences.get('province');
+      city=preferences.get('city');
+      pass=preferences.get('pass');
+      area=preferences.get('area');
+      block=preferences.get('block');
+      part_number=preferences.get('part_number');
+      unit_number=preferences.get('unit_number');
     });
 
 }
@@ -243,52 +250,46 @@ Future getData() async{
                               titel:
                               setapptext(key: 'key_province'),
                               subtitel: getProvincename(
-                                  localdata.province?.isEmpty ??
+                                  province?.isEmpty ??
                                       true
                                       ? ""
-                                      : localdata.province)),
+                                      : province)),
                           wrapContaint(
                               titel: setapptext(
                                   key: 'key_municipality'),
-                              subtitel: getCity(
-                                  localdata.city?.isEmpty ?? true
+                              subtitel: getCity(city?.isEmpty ?? true
                                       ? ""
-                                      : localdata.city)),
+                                      : city)),
                           wrapContaint(
                               titel: setapptext(key: 'key_nahia'),
-                              subtitel:
-                              localdata.area?.isEmpty ?? true
+                              subtitel: area?.isEmpty ?? true
                                   ? ""
-                                  : localdata.area),
+                                  : area),
                           wrapContaint(
                               titel: setapptext(key: 'key_gozar'),
-                              subtitel:
-                              localdata.pass?.isEmpty ?? true
+                              subtitel: pass?.isEmpty ?? true
                                   ? ""
-                                  : localdata.pass),
+                                  : pass),
                           wrapContaint(
                               titel: setapptext(
                                   key: 'key_only_block'),
-                              subtitel:
-                              localdata.block?.isEmpty ?? true
+                              subtitel: block?.isEmpty ?? true
                                   ? ""
-                                  : localdata.block),
+                                  : block),
                           wrapContaint(
                               titel:
                               setapptext(key: 'key_parcel'),
-                              subtitel: localdata
-                                  .part_number?.isEmpty ??
+                              subtitel:part_number?.isEmpty ??
                                   true
                                   ? ""
-                                  : localdata.part_number),
+                                  : part_number),
                           wrapContaint(
                               titel:
                               setapptext(key: 'key_unit_no'),
-                              subtitel: localdata
-                                  .unit_number?.isEmpty ??
+                              subtitel:unit_number?.isEmpty ??
                                   true
                                   ? ""
-                                  : localdata.unit_number),
+                                  : unit_number),
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
