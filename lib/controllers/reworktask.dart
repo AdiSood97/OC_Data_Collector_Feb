@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:catcher/catcher_plugin.dart';
+import 'package:catcher/catcher.dart';
 import 'package:dio/dio.dart';
 
 import '../configs/configuration.dart';

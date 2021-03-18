@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:background_fetch/background_fetch.dart';
-import 'package:catcher/catcher_plugin.dart';
+import 'package:catcher/catcher.dart';
 import 'package:connectivity/connectivity.dart';
 
 import './db_helper.dart';

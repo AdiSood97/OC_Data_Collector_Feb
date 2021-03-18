@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:kapp/controllers/auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:catcher/catcher_plugin.dart';
-
+import 'package:catcher/catcher.dart';
 import '../models/surveyAssignment.dart';
 import '../configs/configuration.dart';
 import '../utils/db_helper.dart';

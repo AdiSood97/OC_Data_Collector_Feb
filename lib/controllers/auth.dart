@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:catcher/catcher_plugin.dart';
+import 'package:catcher/catcher.dart';
 import 'package:background_fetch/background_fetch.dart';
 
 import '../models/user.dart';

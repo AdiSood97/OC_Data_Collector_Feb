@@ -8,9 +8,8 @@ import 'package:kapp/utils/language_service.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
-import 'package:catcher/catcher_plugin.dart';
+import 'package:catcher/catcher.dart';
 import 'package:background_fetch/background_fetch.dart';
-
 import './controllers/auth.dart';
 import './controllers/task.dart';
 import './controllers/appsync.dart';

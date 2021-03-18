@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'dart:io' as io;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:catcher/catcher_plugin.dart';
+import 'package:catcher/catcher.dart';
 import 'package:intl/intl.dart';
 
 import '../models/surveyAssignment.dart';
