@@ -797,7 +797,8 @@ class LocalPropertySurvey {
   //   trd_have_building = map['trd_have_building'];
   //   trd_building_use = map['trd_building_use'];
   //   trd_building_category = map['trd_building_category'];
-  //   trd_specifyif_other = map['trd_specifyif_other'];
+  //   trd_s
+//  pecifyif_other = map['trd_specifyif_other'];
   //   trd_no_of_floors = map['trd_no_of_floors'];
   //   trd_cubie_meter = map['trd_cubie_meter'];
   //   forth_have_building = map['forth_have_building'];
