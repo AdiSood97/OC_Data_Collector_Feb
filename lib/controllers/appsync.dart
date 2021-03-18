@@ -395,7 +395,7 @@ class AppSync with ChangeNotifier {
             "extra2": "SENT",
             "region": "",
             "key": "",
-            "status": 'srv_cmp',
+            "status": "srv_cmp",
             "upin": propertydata.province +
                 "-" +
                 propertydata.area +
