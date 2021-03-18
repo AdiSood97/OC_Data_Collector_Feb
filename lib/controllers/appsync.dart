@@ -43,9 +43,9 @@ class AppSync with ChangeNotifier {
       }
       Map<String, dynamic> inputdata() => {
             "surveyors_info": {
-              "surveyor_1": propertydata.first_surveyor_name,
-              "surveyor_2": propertydata.senond_surveyor_name,
-              "supporting_surveyor": propertydata.technical_support_name
+              "surveyor_1": propertydata.surveyoroneid,
+              "surveyor_2": propertydata.surveyortwoid,
+              "supporting_surveyor": propertydata.surveyleadid
             },
             "arguments_1": {
               "property_argument": propertydata.property_dispte_subject_to,
@@ -407,9 +407,9 @@ class AppSync with ChangeNotifier {
                 propertydata.part_number +
                 "-" +
                 propertydata.unit_number,
-            "surveyor1_id": propertydata.surveyoroneid,
-            "surveyor2_id": propertydata.surveyortwoid,
-            "supporting_surveyor_id": propertydata.surveyleadid,
+            "surveyor1_id": propertydata.first_surveyor_name,
+            "surveyor2_id": propertydata.senond_surveyor_name,
+            "supporting_surveyor_id": propertydata.technical_support_name,
             "authority": "Survey Lead"
           };
       isPropertyDataExistInOnlineDb = await isPropertyExistInDataBase(
