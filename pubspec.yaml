@@ -34,6 +34,8 @@ dependencies:
   image_cropper: ^1.2.1
   jalali_calendar: ^1.0.3+1
   jiffy: ^2.2.0
+  imei_plugin: ^1.2.0
+
 
 
 dev_dependencies:

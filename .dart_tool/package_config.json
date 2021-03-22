@@ -266,6 +266,12 @@
       "languageVersion": "2.5"
     },
     {
+      "name": "imei_plugin",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/imei_plugin-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
@@ -578,7 +584,7 @@
       "languageVersion": "2.3"
     }
   ],
-  "generated": "2021-03-11T05:21:59.101976Z",
+  "generated": "2021-03-18T10:30:32.087923Z",
   "generator": "pub",
   "generatorVersion": "2.10.5"
 }

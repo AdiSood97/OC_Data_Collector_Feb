@@ -310,6 +310,13 @@
             </list>
           </value>
         </entry>
+        <entry key="imei_plugin">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/imei_plugin-1.2.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="intl">
           <value>
             <list>
@@ -710,6 +717,7 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_cropper-1.3.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.7+22/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-1.1.6/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/imei_plugin-1.2.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/jalali_calendar-1.0.3+1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/jiffy-2.2.0/lib" />

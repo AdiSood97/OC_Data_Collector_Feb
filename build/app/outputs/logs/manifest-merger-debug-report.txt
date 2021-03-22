@@ -8,26 +8,35 @@ MERGED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\an
 MERGED from [:catcher] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\catcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:2:1-31:12
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
 MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:imei_plugin] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\imei_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_cropper] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\e57510aa38e8dc116df98e3f85555016\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6c96569527889178fc419cc79bd55c81\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6a8046ba6f21bc589f80a9d5c812b89a\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8e4d58d225a92f9b378880bb92c66950\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c24f81eb06b08ff684d3985dc6da30c8\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6df7dc63c2c57c012a3bf79f2d56582d\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d76c8928f19514c0c8d39a10fe9821ef\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6389fd3ddf7859d41d7bede110330b6b\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c7de00fa2d917ed7ee17210679404f3f\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efed9eab86b551abb4a6e118e31da9cf\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -40,8 +49,11 @@ MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\user\.gradle\c
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\48e1e05e7fa0af5511de38e08b97318d\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\95e37632aeb0769e15c9c09f89b2537e\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\863b8265ff0e9bdc36f5770c74ae316d\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7d0b995f8d28fe51b158d584e76b9555\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -154,18 +166,20 @@ MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Colle
 MERGED from [:fluttertoast] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:background_fetch] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\background_fetch\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:7:5-9:41
 MERGED from [tsbackgroundfetch-0.4.5.aar] C:\Users\user\.gradle\caches\transforms-2\files-2.1\623fa6c9bafe22191d0bee32ec7f8849\tsbackgroundfetch-0.4.5\AndroidManifest.xml:7:5-9:41
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\package_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:imei_plugin] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\imei_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:imei_plugin] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\imei_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -176,24 +190,40 @@ MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data
 MERGED from [:shared_preferences] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_mailer] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\flutter_mailer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\e57510aa38e8dc116df98e3f85555016\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\e57510aa38e8dc116df98e3f85555016\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.yalantis:ucrop:2.2.6] C:\Users\user\.gradle\caches\transforms-2\files-2.1\107c08f983b8c84309e7ed91a147a4ee\ucrop-2.2.6\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\601bf159ada7053cfea0fffbcdeac906\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\1d9e2ed825c193ff89e85df3ede317b4\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6c96569527889178fc419cc79bd55c81\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6c96569527889178fc419cc79bd55c81\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\efd1825a827eb83b203c724ae6d08d7b\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6a8046ba6f21bc589f80a9d5c812b89a\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6a8046ba6f21bc589f80a9d5c812b89a\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7b061ab6812d9e27b59e7076ef2e7959\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\16e8483b2ad95fa6cf6c106961c557c4\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8e4d58d225a92f9b378880bb92c66950\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8e4d58d225a92f9b378880bb92c66950\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.2.0-rc01] C:\Users\user\.gradle\caches\transforms-2\files-2.1\007ec03cb3e4db9a19d546941efa4a88\transition-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c24f81eb06b08ff684d3985dc6da30c8\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c24f81eb06b08ff684d3985dc6da30c8\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d01c2c56968523b9de09204fda96c641\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6df7dc63c2c57c012a3bf79f2d56582d\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6df7dc63c2c57c012a3bf79f2d56582d\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\0644282bbbc9f41dfd6bad5de7e4c0e6\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d76c8928f19514c0c8d39a10fe9821ef\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d76c8928f19514c0c8d39a10fe9821ef\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6389fd3ddf7859d41d7bede110330b6b\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\6389fd3ddf7859d41d7bede110330b6b\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c0c56863c2f7def737ac72dcd7c046c6\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\c7de00fa2d917ed7ee17210679404f3f\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -218,10 +248,16 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\us
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8f21f197c7a242358397d112429176f8\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b8691ad95b689b611cce4c0dbf44a2f8\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\95e37632aeb0769e15c9c09f89b2537e\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\95e37632aeb0769e15c9c09f89b2537e\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\863b8265ff0e9bdc36f5770c74ae316d\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\863b8265ff0e9bdc36f5770c74ae316d\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7d0b995f8d28fe51b158d584e76b9555\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7d0b995f8d28fe51b158d584e76b9555\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\94a6ea1a68c7d57d4c2f8970584b06b4\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8184466a9253ef2e75db13a417697a2a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 INJECTED from E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
@@ -288,6 +324,10 @@ ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collec
 		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
 	android:name
 		ADDED from [:image_picker] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from [:imei_plugin] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\imei_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-75
+	android:name
+		ADDED from [:imei_plugin] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\imei_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-72
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [:connectivity] E:\Flutter Project\Oc Data Collector_2\OC_Data_Collector_Feb-main\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-79
 	android:name

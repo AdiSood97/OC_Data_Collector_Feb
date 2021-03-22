@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList2.dart';
@@ -12,6 +13,8 @@ import '../widgets/appformcards.dart';
 import '../widgets/appformcards.dart';
 import '../widgets/appformcards.dart';
 import 'editpage.dart';
+import 'package:imei_plugin/imei_plugin.dart';
+
 class ViewList1 extends StatefulWidget {
   @override
   _ViewList1State createState() => _ViewList1State();
@@ -19,6 +22,7 @@ class ViewList1 extends StatefulWidget {
 
 class _ViewList1State extends State<ViewList1> {
   LocalPropertySurvey localdata;
+
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
@@ -189,7 +193,12 @@ class _ViewList1State extends State<ViewList1> {
   //localdata = new LocalPropertySurvey();
    //print("Property is=${localdata.real_person_status}");
     super.initState();
+
+
+
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
