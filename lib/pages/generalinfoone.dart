@@ -11,14 +11,16 @@ import './generalinfotwo.dart';
 import './surveyinfo.dart';
 
 class GeneralInfoOnePage extends StatefulWidget {
-  GeneralInfoOnePage({this.localdata});
+  GeneralInfoOnePage({this.localdata,this.surveyList});
   final LocalPropertySurvey localdata;
+  List surveyList;
   @override
   _GeneralInfoOnePageState createState() => _GeneralInfoOnePageState();
 }
 
 class _GeneralInfoOnePageState extends State<GeneralInfoOnePage> {
   LocalPropertySurvey localdata;
+  List surveyList;
   var _formkey = GlobalKey<FormState>();
 
   String setapptext({String key}) {
@@ -81,6 +83,7 @@ class _GeneralInfoOnePageState extends State<GeneralInfoOnePage> {
             PageTransition(
                 child: SurveyInfoPage(
                   localdata: localdata,
+                  surveyList: surveyList,
                 ),
                 type: PageTransitionType.leftToRight));
       },
