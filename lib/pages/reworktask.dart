@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:kapp/utils/db_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/appdrawer.dart';
+import '../models/localpropertydata.dart';
 import '../localization/app_translations.dart';
 import '../controllers/reworktask.dart';
 import '../models/reworkassignment.dart';
@@ -15,39 +17,63 @@ class ReworkTaskPage extends StatefulWidget {
 }
 
 class _ReworkTaskPageState extends State<ReworkTaskPage> {
+  List<LocalPropertySurvey> surveys = [];
+  int currStatus = 0;
+  
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
 
   String workstatus({int status}) {
-    String result = "";
-    if (status != null) {
-      if (status == 0) {
-        result = setapptext(key: 'key_not_started');
-      } else if (status == 1) {
-        result = setapptext(key: 'key_in_progress');
-      } else if (status == 2) {
-        result = setapptext(key: 'key_completed');
-      } else if (status == 3) {
-        result = setapptext(key: 'key_synced');
+    var result = setapptext(key: 'key_not_started');
+    if(status != null) {
+      switch (status) {
+        case 0: //Drafted
+          result = setapptext(key: 'key_Drafted');
+          break;
+        case 1: //Completed
+          result = setapptext(key: 'key_completed');
+          break;
+        case 2: //Synced
+          result = setapptext(key: 'key_synced');
+          break;
+        default:
+          result = "";
       }
     }
     return result;
   }
-
-
+  int getStatus( {ReworkAssignment id}){
+    int status;
+    String localkey = id.province +
+        id.municipality +
+        id.nahia +
+        id.gozar +
+        id.block +
+        id.parcelno +
+        id.unit;
+    for(int i = 0; i<surveys.length; i++){
+      if(surveys[i].local_property_key == localkey){
+        status = surveys[i].isdrafted;
+      }
+    }
+    currStatus = status;
+    return status;
+  }
 
   Color workstatuscolor({int status}) {
-    Color result = Colors.transparent;
-    if (status != null) {
-      if (status == 0) {
-        result = Color.fromRGBO(189, 148, 36, 1);
-      } else if (status == 1) {
-        result = Colors.lightGreen;
-      } else if (status == 2) {
-        result = Colors.green;
-      } else if (status == 3) {
-        result = Colors.lightBlue;
+    Color result = Color.fromRGBO(189, 148, 36, 1);
+    if(status != null) {
+      switch (status) {
+        case 0: //Drafted
+          result = Color.fromRGBO(189, 148, 36, 1);
+          break;
+        case 1: //Completed
+          result = Colors.lightGreen;
+          break;
+        case 2: //Synced
+          result = Colors.lightBlue;
+          break;
       }
     }
     return result;
@@ -152,10 +178,14 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
     );
   }
   @override
-/*  Future<void> initState() async {
+  void initState() {
     super.initState();
-    await _fetchJobs();
-  }*/
+    asyncMethod();
+  }
+
+  void asyncMethod() async {
+    surveys = await DBHelper().getallpropertysurveys();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -191,6 +221,9 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
                         child: ListView.builder(
                           itemCount: data?.isEmpty ?? true ? 0 : data.length,
                           itemBuilder: (context, index) {
+                            print("$index status: ${data[index].status}");
+                            print("$index appstatus: ${data[index].appstatus}");
+                            print("$index surveystatus: ${data[index].surveystatus}");
                             return listcard(
                                 id: data[index] == null
                                     ? new ReworkAssignment()
@@ -210,9 +243,9 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
                                         ? ""
                                         : data[index].createdate,
                                 status:
-                                    workstatus(status: data[index].appstatus),
+                                    workstatus(status: getStatus(id:data[index])),
                                 statuscolor: workstatuscolor(
-                                    status: data[index].appstatus));
+                                    status: currStatus));
                           },
                         ),
                       )

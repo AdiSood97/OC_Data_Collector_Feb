@@ -140,6 +140,7 @@ class _SurveyPageState extends State<SurveyPage> {
                                   pref.setString('current_use_of_property', surveydata.current_use_of_property);
                                   pref.setString('proprietary_properties', surveydata.proprietary_properties);
                                   pref.setString('redeemable_property', surveydata.redeemable_property);
+                                  pref.setString('govt_property', surveydata.govt_property);
                                   pref.setString('document_type', surveydata.document_type);
                                   pref.setString('issued_on', surveydata.issued_on);
                                   pref.setString('place_of_issue', surveydata.place_of_issue);
@@ -1278,6 +1279,12 @@ class _UploadDataState extends State<UploadData> {
                                     // await DBHelper().updateTaskSyncStatus(
                                     //     taskid: widget.propertydata.taskid);
                                     await BackGroundSync().startSync();
+                                    print(widget.propertydata.lightning_common_name);
+                                    print(widget.propertydata.lightning_father_name);
+                                    print(widget.propertydata.safari_booklet_common_name);
+                                    print(widget.propertydata.safari_booklet_father_name);
+                                    print('${widget.propertydata}');
+
                                     setState(() {
                                       msgvalue =
                                           setapptext(key: 'key_sync_completed');

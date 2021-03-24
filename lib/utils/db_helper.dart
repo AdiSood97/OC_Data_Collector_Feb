@@ -1017,6 +1017,30 @@ class DBHelper with ChangeNotifier {
     return _propertysurveys;
   }
 
+  Future<List<LocalPropertySurvey>> getallpropertysurveys(
+      {String taskid, String localkey}) async {
+    setState(AppState.Busy);
+    notifyListeners();
+    try {
+      var dbClient = await db;
+      var sqlquery = "";
+      List<dynamic> params = [];
+        sqlquery = '''
+        SELECT * FROM propertysurvey ORDER BY isdrafted ASC
+      ''';
+      List<Map> it = await dbClient.rawQuery(sqlquery);
+      _propertysurveys =
+          it.map((f) => LocalPropertySurvey.frommapobject(f)).toList();
+    } catch (error, stackTrace) {
+      setState(AppState.Idle);
+
+      Catcher.reportCheckedError(error, stackTrace);
+    }
+    setState(AppState.Idle);
+    notifyListeners();
+    return _propertysurveys;
+  }
+
   Future<LocalPropertySurvey> getSingleProperty(
       {String taskid, String localkey}) async {
     setState(AppState.Busy);
