@@ -34,7 +34,7 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
         case 1: //Completed
           result = setapptext(key: 'key_completed');
           break;
-        case 2: //Synced
+        case 3: //Synced
           result = setapptext(key: 'key_synced');
           break;
         default:
@@ -71,7 +71,7 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
         case 1: //Completed
           result = Colors.lightGreen;
           break;
-        case 2: //Synced
+        case 3: //Synced
           result = Colors.lightBlue;
           break;
       }

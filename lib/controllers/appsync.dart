@@ -462,14 +462,15 @@ class AppSync with ChangeNotifier {
                 "Authorization": preferences.getString("accesstoken")
               },
             );
-            await http.patch(
+            ///Commented out the below part as it was causing issue while Syncing the Rework task.
+            /*await http.patch(
               Configuration.apiurl + "taskreassignment/${propertydata.taskid}",
               body: {"surveystatus": "close"},
               headers: {
                 "Content-Type": "application/json",
                 "Authorization": preferences.getString("accesstoken")
               },
-            );
+            );*/
           }
         }
       } else {
