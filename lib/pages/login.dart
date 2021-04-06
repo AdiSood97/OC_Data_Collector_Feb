@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
       print("UniqueId is =${uniqueId}");
       _deviceId = deviceId;
       print("deviceId->$_deviceId");
-      _macAddress = macAddress;
+      _macAddress = macAddress.toLowerCase();
       print("MacAddress->$_macAddress");
     });
   }
@@ -264,12 +264,12 @@ class _LoginPageState extends State<LoginPage> {
                                           var result =
                                               await data.login(user: _user);
                                           if (result == "ok") {
-                                            _navigationService
+                                            /*_navigationService
                                                 .navigateRepalceTo(
                                                 routeName:
-                                                routes.LanguageRoute);
+                                                routes.LanguageRoute);*/
 
-                                           /*if(await data.checkImei(_platformImei))
+                                           if(await data.checkImei(_macAddress))
                                             {
                                               _navigationService
                                                   .navigateRepalceTo(
@@ -278,12 +278,12 @@ class _LoginPageState extends State<LoginPage> {
                                             }else{
                                              showDialogSingleButton(
                                                  context: context,
-                                                 message: 'Device is not authorised. Your IMEI is \n$_platformImei',///TODO: Message is only in english
+                                                 message: 'Device is not authorised.\nYour Mac Address is \n$_macAddress',///TODO: Message is only in english
                                                  title: 'Warning',
                                                  buttonLabel: 'ok');
                                              preferences.clear();
                                              //BackgroundFetch.stop();
-                                           }*/
+                                           }
                                           } else {
                                             showDialogSingleButton(
                                                 context: context,
