@@ -9,7 +9,6 @@ import '../models/localpropertydata.dart';
 import '../localization/app_translations.dart';
 import '../controllers/reworktask.dart';
 import '../models/reworkassignment.dart';
-import './reworklist.dart';
 import './surveyinfo.dart';
 import './surveylist.dart';
 import '../models/surveyAssignment.dart';
@@ -382,14 +381,6 @@ class _ReworkTaskPageState extends State<ReworkTaskPage> {
                                     data[index].block +
                                     data[index].parcelno +
                                     data[index].unit)) as List<LocalPropertySurvey>;*/
-                      print("$index status: ${availableReworkAssignment[index]
-                          .status}");
-                      print(
-                          "$index appstatus: ${availableReworkAssignment[index]
-                              .appstatus}");
-                      print(
-                          "$index surveystatus: ${availableReworkAssignment[index]
-                              .surveystatus}");
                       return listcard(
                           id: availableReworkAssignment[index] == null
                               ? new ReworkAssignment()

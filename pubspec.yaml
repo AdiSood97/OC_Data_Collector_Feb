@@ -34,6 +34,9 @@ dependencies:
   image_cropper: ^1.2.1
   jalali_calendar: ^1.0.3+1
   jiffy: ^2.2.0
+  platform_device_id: any
+  imei_plugin: any
+  get_mac: any
 
 
 dev_dependencies:

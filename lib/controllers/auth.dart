@@ -4,7 +4,6 @@ import 'package:catcher/core/catcher.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-//import 'package:catcher/catcher_plugin.dart';
 import 'package:background_fetch/background_fetch.dart';
 
 import '../models/user.dart';
@@ -74,6 +73,37 @@ class AuthModel with ChangeNotifier {
       result = "Invalid username or password.";
       setState(AppState.Idle);
       Catcher.reportCheckedError(error, stackTrace);
+    }
+    setState(AppState.Idle);
+    notifyListeners();
+    return result;
+  }
+
+  Future<bool> checkImei(String imei) async {
+    bool result = false;
+    setState(AppState.Busy);
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    var response = await http.get(
+        Configuration.apiurl + 'device-management?imei=$imei&active=true',
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": preferences.getString("accesstoken")
+        });
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      print("Imei check json ============ ${data1['total']}");
+      if( (data1['total']).toInt() == 0 ) {
+        result = false;
+      }else result = true;
+      // return jsonResponse.map((job) => new Job.fromJson(job)).toList();
+    } else if (response.statusCode == 401) {
+      AuthModel().generateRefreshToken().then((_) {
+        checkImei(imei);
+      });
+    }else {
+      throw Exception('Failed to check IMEI');
+      setState(AppState.Idle);
     }
     setState(AppState.Idle);
     notifyListeners();

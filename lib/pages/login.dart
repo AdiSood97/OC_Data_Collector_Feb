@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../localization/app_translations.dart';
 import '../controllers/auth.dart';
 import '../models/user.dart';
@@ -8,7 +9,14 @@ import '../utils/showappdialog.dart';
 import '../utils/navigation_service.dart';
 import '../utils/route_paths.dart' as routes;
 import '../utils/locator.dart';
+import 'package:flutter/services.dart';
 import '../utils/appstate.dart';
+import 'package:kapp/utils/appstate.dart';
+import 'package:platform_device_id/platform_device_id.dart';
+import 'package:imei_plugin/imei_plugin.dart';
+import 'package:get_mac/get_mac.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -22,16 +30,56 @@ class _LoginPageState extends State<LoginPage> {
   FocusNode _email;
   FocusNode _password;
   bool showpassword = true;
+  SharedPreferences preferences;
+  String _deviceId = "Unknown";
+  String _platformImei = 'Unknown';
+  String uniqueId = "Unknown";
+  String _identifier = 'Unknown';
+  String _macAddress = 'Unknown';
 
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
+
+  Future<void> initPlatformState() async {
+    preferences = await SharedPreferences.getInstance();
+    String platformImei;
+    String idunique;
+    String deviceId;
+    String macAddress;
+    try {
+      platformImei =
+      await ImeiPlugin.getImei(shouldShowRequestPermissionRationale: false);
+      String multiImei = await ImeiPlugin.getImei();
+      print("MultiEmei is=${multiImei}");
+      idunique = await ImeiPlugin.getId();
+      deviceId = await PlatformDeviceId.getDeviceId;
+      macAddress = await GetMac.macAddress;
+    } on PlatformException {
+      platformImei = 'Failed to get platform version.';
+    }
+    if (!mounted) return;
+
+    setState(() {
+      _platformImei = platformImei;
+      uniqueId = idunique;
+      print("UniqueId is =${uniqueId}");
+      _deviceId = deviceId;
+      print("deviceId->$_deviceId");
+      _macAddress = macAddress;
+      print("MacAddress->$_macAddress");
+    });
+  }
+
+
 
   @override
   void initState() {
     _email = FocusNode();
     _password = FocusNode();
     super.initState();
+    initPlatformState();
+
   }
 
   @override
@@ -120,6 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                                 focusNode: _password,
                                 textInputAction: TextInputAction.go,
                                 onFieldSubmitted: (_) async {
+
                                   if (_formkey.currentState.validate()) {
                                     _formkey.currentState.save();
                                     var connectivityResult =
@@ -202,6 +251,7 @@ class _LoginPageState extends State<LoginPage> {
                                   )
                                 : GestureDetector(
                                     onTap: () async {
+
                                       if (_formkey.currentState.validate()) {
                                         _formkey.currentState.save();
                                         var connectivityResult =
@@ -216,8 +266,24 @@ class _LoginPageState extends State<LoginPage> {
                                           if (result == "ok") {
                                             _navigationService
                                                 .navigateRepalceTo(
-                                                    routeName:
-                                                        routes.LanguageRoute);
+                                                routeName:
+                                                routes.LanguageRoute);
+
+                                           /*if(await data.checkImei(_platformImei))
+                                            {
+                                              _navigationService
+                                                  .navigateRepalceTo(
+                                                      routeName:
+                                                          routes.LanguageRoute);
+                                            }else{
+                                             showDialogSingleButton(
+                                                 context: context,
+                                                 message: 'Device is not authorised. Your IMEI is \n$_platformImei',///TODO: Message is only in english
+                                                 title: 'Warning',
+                                                 buttonLabel: 'ok');
+                                             preferences.clear();
+                                             //BackgroundFetch.stop();
+                                           }*/
                                           } else {
                                             showDialogSingleButton(
                                                 context: context,
