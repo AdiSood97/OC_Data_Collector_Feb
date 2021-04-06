@@ -95,7 +95,7 @@ class AuthModel with ChangeNotifier {
       print("Imei check json ============ ${data1['total']}");
       if( (data1['total']).toInt() == 0 ) {
         result = false;
-      }else result = true;
+      }else if( (data1['total']).toInt() == 1 ) result = true;
       // return jsonResponse.map((job) => new Job.fromJson(job)).toList();
     } else if (response.statusCode == 401) {
       AuthModel().generateRefreshToken().then((_) {
