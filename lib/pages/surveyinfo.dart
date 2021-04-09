@@ -89,8 +89,10 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
           return;
         } else {
           _formkey.currentState.save();
-          if (widget.localdata != null) {
-            localdata = widget.localdata;
+          if(localdata.isrework!=1){
+            if (widget.localdata != null) {
+              localdata = widget.localdata;
+            }
           }
           if (widget.surveyAssignment != null) {
             localdata.taskid = widget.surveyAssignment.id;
@@ -100,19 +102,22 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
             localdata.editmode = 1;
           }*/
           if (widget.surveyAssignment != null) {
-            localdata.first_surveyor_name =  widget.surveyAssignment.surveyortwoname;
-            localdata.senond_surveyor_name =
-                widget.surveyAssignment.surveyortwoname;
-            localdata.technical_support_name =
-                widget.surveyAssignment.teamleadname;
-            localdata.province = widget.surveyAssignment.province;
-            localdata.city = widget.surveyAssignment.municpality;
-            localdata.area = widget.surveyAssignment.nahia;
-            localdata.pass = widget.surveyAssignment.gozar;
-            localdata.block = widget.surveyAssignment.block;
-            localdata.surveyoroneid = widget.surveyAssignment.surveyor1;
-            localdata.surveyortwoid = widget.surveyAssignment.surveyor2;
-            localdata.surveyleadid = widget.surveyAssignment.teamlead;
+           if(widget.surveyAssignment.surveyoronename != "") {
+             localdata.first_surveyor_name =
+                 widget.surveyAssignment.surveyoronename;
+             localdata.senond_surveyor_name =
+                 widget.surveyAssignment.surveyortwoname;
+             localdata.technical_support_name =
+                 widget.surveyAssignment.teamleadname;
+             localdata.province = widget.surveyAssignment.province;
+             localdata.city = widget.surveyAssignment.municpality;
+             localdata.area = widget.surveyAssignment.nahia;
+             localdata.pass = widget.surveyAssignment.gozar;
+             localdata.block = widget.surveyAssignment.block;
+             localdata.surveyoroneid = widget.surveyAssignment.surveyor1;
+             localdata.surveyortwoid = widget.surveyAssignment.surveyor2;
+             localdata.surveyleadid = widget.surveyAssignment.teamlead;
+           }
             localdata.other_key =
                 (widget.surveyAssignment.reworkstatus?.isEmpty ?? true)
                     ? "Survey Completed"
@@ -123,6 +128,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
             PageTransition(
                 child: GeneralInfoOnePage(
                   localdata: localdata,
+                  surveyList: surveyList,
                 ),
                 type: PageTransitionType.rightToLeft),
           );
@@ -260,7 +266,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
       currentSurveyName =
           '${surveyDetails['first_name']} ${surveyDetails['last_name']}';
     }
-    print("97959-----------===================");
+    print("97959-----------=================== ${localdata.first_surveyor_name}");
     print(widget.localsurveykey);
     print("current survery details ====== ${currentSurveyId},${currentSurveyName}");
    //print("survery list ====== ${surveyList}");
@@ -308,6 +314,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
       localdata.technical_support_name = localdata.technical_support_name;
     }
     print('pqoowieuuwiefni ${localdata.first_surveyor_name}');
+    print('pqoowieuuwiefni ${localdata.surveyoroneid}');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -543,7 +550,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   hinttextkey:
                                       setapptext(key: 'key_enter_1st_surveyor'),
                                   fieldfocus: _firstsurveyor,
-                                 //value: getValueForName(localdata.surveyoroneid, surveyList),
+                                 value: getValueForName(localdata.surveyoroneid,localdata.first_surveyor_name, surveyList),
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) {
                                     _firstsurveyor.unfocus();
@@ -584,7 +591,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   }),
                               formcardtextfield1(
                                   enable: false,
-                                  //value: getValueForName(localdata.surveyortwoid, surveyList),
+                                  value: getValueForName(localdata.surveyortwoid,localdata.senond_surveyor_name, surveyList),
                                   fieldrequired: true,
                                   surveyList: surveyList,
                                   headerlablekey:
@@ -627,7 +634,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   }),
                               formcardtextfield1(
                                   enable: false,
-                                 // value: getValueForName(localdata.surveyleadid, surveyList),
+                                 value: getValueForName(localdata.surveyleadid,localdata.technical_support_name, surveyList),
                                   fieldrequired: true,
                                   surveyList: surveyList,
                                   headerlablekey: setapptext(
@@ -700,12 +707,20 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     );
   }
 
-  getValueForName(String id, List surList) {
+  getValueForName(String id, String name, List surList) {
     for(int i = 0; i<surveyList.length; i++){
-        if(surList[i]['_id'] == id){
+      if(id != null){
+        if (surList[i]['_id'] == id) {
           print('=-=-=-=-000---0-0--0 ${surList[i]['first_name']}');
           return surList[i];
         }
+      }
+      if(name != null){
+        if (surList[i]['_id'] == name) {
+          print('=-=-=-=-000---0-0--0 ${surList[i]['first_name']}');
+          return surList[i];
+        }
+      }
     }
   }
 }
