@@ -213,7 +213,7 @@ class _ViewList15State extends State<ViewList15> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (getYesNo(property_user_owner)?? "") ==''?false:true),
+                                              completedcheckbox(isCompleted: (property_user_owner?? '0') =='0'?false:true),
                                               /*Text(
                                                 '*',
                                                 style: TextStyle(color: Colors.red, fontSize: 18),
@@ -275,7 +275,7 @@ class _ViewList15State extends State<ViewList15> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (getYesNo(property_user_master_rent)?? "") ==''?false:true),
+                                              completedcheckbox(isCompleted: (property_user_master_rent?? "0") =='0'?false:true),
                                               /*Text(
                                                 '*',
                                                 style: TextStyle(color: Colors.red, fontSize: 18),
@@ -337,7 +337,7 @@ class _ViewList15State extends State<ViewList15> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (getYesNo(property_user_recipient_group)?? "") ==''?false:true),
+                                              completedcheckbox(isCompleted: (property_user_recipient_group?? "0") =='0'?false:true),
                                               /*Text(
                                                 '*',
                                                 style: TextStyle(color: Colors.red, fontSize: 18),
@@ -399,7 +399,7 @@ class _ViewList15State extends State<ViewList15> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (getYesNo(property_user_no_longer)?? "") ==''?false:true),
+                                              completedcheckbox(isCompleted: (property_user_no_longer?? "0") =='0'?false:true),
                                               /*Text(
                                                 '*',
                                                 style: TextStyle(color: Colors.red, fontSize: 18),

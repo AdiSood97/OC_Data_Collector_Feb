@@ -18,6 +18,7 @@ import '../models/localpropertydata.dart';
 import './task.dart';
 
 class ReworkTask with ChangeNotifier {
+  List namesOfSurveyor = [];
   AppState _state = AppState.Idle;
   AppState get state => _state;
   void setState(AppState appState) {
@@ -29,6 +30,7 @@ class ReworkTask with ChangeNotifier {
   List<ReworkAssignment> get reworkAssignments => _reworkAssignments;
 
   Future<List<ReworkAssignment>> getReworkAssignments() async {
+    print("getReworkAssignment");
     var connectivityResult = await (Connectivity().checkConnectivity());
     SharedPreferences preferences = await SharedPreferences.getInstance();
     try {
@@ -36,6 +38,19 @@ class ReworkTask with ChangeNotifier {
       _reworkAssignments = [];
       if (connectivityResult == ConnectivityResult.mobile ||
           connectivityResult == ConnectivityResult.wifi) {
+        var role_id = preferences.getString("new_role_id");
+        //print(role_id);
+        final jobsListAPIUrl =
+            'http://13.234.225.179:3002/users?role_id=${role_id}';
+        final response = await http.get(jobsListAPIUrl);
+
+        if (response.statusCode == 200) {
+          final data1 = json.decode(response.body);
+            namesOfSurveyor = data1["data"];
+          // return jsonResponse.map((job) => new Job.fromJson(job)).toList();
+        } else {
+          throw Exception('Failed to load jobs from API');
+        }
         var responce = await http.get(
             Configuration.apiurl +
                 'taskreassignment',
@@ -57,14 +72,16 @@ class ReworkTask with ChangeNotifier {
           if (!(email?.isEmpty ?? true)) {
             AuthModel().generateRefreshToken().then((_) {
               getReworkAssignments();
+              print("getReworkAssignment 401");
             });
           }
         }
         //reworkAssignments have data
         if (!(_reworkAssignments?.isEmpty ?? true)) {
-          _reworkAssignments =
-              await addNames(assignmentlist: _reworkAssignments);
+         /* _reworkAssignments =
+              await addNames(assignmentlist: _reworkAssignments);*/
           //insert data to local database
+
           await DBHelper()
               .addReworkSurvey(reworkassignments: _reworkAssignments);
         }
@@ -78,28 +95,44 @@ class ReworkTask with ChangeNotifier {
     return _reworkAssignments;
   }
 
+  Future<String> getName(String id) async {
+    if(id == null){
+      return '';
+    } else{
+    for(dynamic names in namesOfSurveyor){
+      if(names['_id'] == id) {
+        return (names['first_name']+' '+names['last_name']);
+      }
+    }
+    }
+    if(id.length != 24){
+      return '';
+    } else
+    return await TaskModel().getUserName(userid: id);
+  }
+
   Future<List<ReworkAssignment>> addNames(
       {List<ReworkAssignment> assignmentlist}) async {
     List<ReworkAssignment> modifiedassignment = [];
     try {
       if (assignmentlist.isNotEmpty) {
         for (ReworkAssignment item in assignmentlist) {
-          item.surveyleadname =
-              await TaskModel().getUserName(userid: item.surveylead);
-          item.surveyoronename =
-              await TaskModel().getUserName(userid: item.surveyor1);
+          item.surveyleadname = await getName(item.surveylead);
+          /*item.surveyoronename =
+          await getName(item.surveyor1);
           item.surveyortwoname =
-              await TaskModel().getUserName(userid: item.surveyor2);
-          modifiedassignment.add(item);
+          await getName(item.surveyor2);
+          modifiedassignment.add(item);*/
         }
       }
     } catch (error, stackTrace) {
       Catcher.reportCheckedError(error, stackTrace);
     }
-    return modifiedassignment;
+    return assignmentlist;
   }
 
   Future<bool> downLoadPropertyData({String propertyid, String taskid}) async {
+
     bool result = false;
     setState(AppState.Busy);
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -112,6 +145,7 @@ class ReworkTask with ChangeNotifier {
               "Authorization": preferences.getString("accesstoken")
             });
         if (responce.statusCode == 200) {
+          print("downloadedPropertyData id=$propertyid");
           LocalPropertySurvey property = await jsonToProperty(
               responseJson: json.decode(responce.body), taskid: taskid);
           var isinsertedintodb = await DBHelper().addPropertySurvey(property);
@@ -566,6 +600,8 @@ class ReworkTask with ChangeNotifier {
         responseJson['property_physical_location']['parcel_area'];
     _localproperty.property_type =
         responseJson['property_physical_location']['ownership_type'];
+    _localproperty.property_mode =
+    responseJson['property_physical_location']['ownership_mode'];
     _localproperty.location_of_land_area = responseJson['zones'];
     _localproperty.property_have_document = responseJson['doc_presence_state'];
     _localproperty.document_type = responseJson['document_type_info'];
@@ -1165,3 +1201,5 @@ class ReworkTask with ChangeNotifier {
     return _localproperty;
   }
 }
+
+

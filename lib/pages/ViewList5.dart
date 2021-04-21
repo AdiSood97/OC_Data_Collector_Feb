@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:kapp/configs/configuration.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
+import 'package:http/http.dart' as http;
 import 'package:kapp/pages/ViewList6.dart';
 import 'package:kapp/pages/ViewList8.dart';
 import 'package:kapp/pages/ViewList9.dart';
@@ -16,6 +20,15 @@ class ViewList5 extends StatefulWidget {
 }
 
 class _ViewList5State extends State<ViewList5> {
+
+  List<String> propertyUseValues = ['0'];
+  Map<String, String> propertyUses={'0':"None Selected"};
+  List<String> propertySubUseValues=[];
+  Map<String, String> propertySubUses={};
+  String selectedPropertyType;
+  bool gotProperty = false;
+  bool gotSubProperty = false;
+
   LocalPropertySurvey localdata= LocalPropertySurvey();
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
@@ -39,6 +52,64 @@ class _ViewList5State extends State<ViewList5> {
       ],
     );
   }
+
+  void _propertyUseListAPI() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    var response = await http.get(Configuration.apiurl + 'mPropertyUseType?active=true', headers: {
+      "Content-Type": "application/json",
+      "Authorization": preferences.getString("accesstoken")
+    });
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      for(dynamic item in data1["data"]){
+
+        propertyUseValues.add(item['value']);
+        propertyUses[item['value']] = item['name'];
+
+      }
+      propertyUseValues = propertyUseValues.toSet().toList();
+
+      setState(() {
+        gotProperty = true;
+      });
+
+    } else {
+      throw Exception('Failed to load jobs from API');
+    }
+  }
+
+  void _propertySubUseListAPI(String type, int editmode) async {
+    selectedPropertyType = type;
+    propertySubUseValues = ['0'];
+    propertySubUses = {};
+    propertySubUses['0']="None Selected";
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    var response = await http.get(Configuration.apiurl + 'mPropertySubUseType?UsesType=$selectedPropertyType&active=true', headers: {
+      "Content-Type": "application/json",
+      "Authorization": preferences.getString("accesstoken")
+    });
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      for(dynamic item in data1["data"]){
+
+        propertySubUseValues.add(item['value'].toString());
+        propertySubUses[item['value']] = item['SubUsesType'];
+
+      }
+      propertySubUseValues = propertySubUseValues.toSet().toList();
+      setState(() {
+        gotSubProperty = true;
+        propertySubUses = propertySubUses;
+      });
+      if(editmode!= 1) Navigator.pop(context);
+
+    } else {
+      throw Exception('Failed to load jobs from API');
+    }
+  }
+
   String getLocationZone(String id) {
     var result = "";
     switch (id) {
@@ -411,7 +482,6 @@ class _ViewList5State extends State<ViewList5> {
       property_have_document=preferences.getString('property_have_document');
       current_use_of_property=preferences.getString('current_use_of_property');
       proprietary_properties=preferences.getString('proprietary_properties');
-      print("jhdfjghdhguihdgdjkhgdgjhdhghdhghdghdghdg=${getCommercialStatus(proprietary_properties)}");
       govt_property=preferences.getString('govt_property') ?? "" ;
       specified_current_use=preferences.getString('specified_current_use') ?? "" ;
       unspecified_current_use_type=preferences.getString('unspecified_current_use_type')??'';
@@ -423,8 +493,19 @@ class _ViewList5State extends State<ViewList5> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    asyncMethod();
     getData();
   }
+
+  Future<void> asyncMethod() async {
+    await _propertyUseListAPI();
+    await _propertySubUseListAPI(current_use_of_property,1);
+
+    gotSubProperty=true;
+    print(propertySubUses[specified_current_use]);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -435,7 +516,11 @@ class _ViewList5State extends State<ViewList5> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        body:SafeArea(
+        body:(!(gotProperty && gotSubProperty))
+            ? Center(
+          child: CircularProgressIndicator(),
+        )
+            :SafeArea(
           child: Form(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -620,7 +705,7 @@ class _ViewList5State extends State<ViewList5> {
                                       SizedBox(height: 5,),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10),
-                                        child: Text(getCurrentProperty(current_use_of_property),style: TextStyle(fontSize: 20,color: Colors.black),),
+                                        child: Text(propertyUses[current_use_of_property],style: TextStyle(fontSize: 20,color: Colors.black),),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
@@ -635,7 +720,7 @@ class _ViewList5State extends State<ViewList5> {
                               ),
                             ),
                           ),
-                          if(current_use_of_property=='2'||current_use_of_property=='3')Container(
+                          /*if(current_use_of_property=='2'||current_use_of_property=='3')Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -660,10 +745,10 @@ class _ViewList5State extends State<ViewList5> {
                                             : TextDirection.rtl,
                                         children: <Widget>[
                                           completedcheckbox(isCompleted: getCommercialStatus(proprietary_properties) ==''?false:true),
-                                          /*Text(
+                                          *//*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),
-                                          ),*/
+                                          ),*//*
                                           Flexible(
                                             child: Container(
                                               child: Text(setapptext(key: 'key_Proprietary_Properties'),
@@ -722,10 +807,10 @@ class _ViewList5State extends State<ViewList5> {
                                             : TextDirection.rtl,
                                         children: <Widget>[
                                           completedcheckbox(isCompleted: getRedeem(redeemable_property) ==''?false:true),
-                                          /*Text(
+                                          *//*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),
-                                          ),*/
+                                          ),*//*
                                           Flexible(
                                             child: Container(
                                               child: Text(setapptext(key: 'key_Type_of_redeemable_property'),
@@ -784,10 +869,10 @@ class _ViewList5State extends State<ViewList5> {
                                             : TextDirection.rtl,
                                         children: <Widget>[
                                           completedcheckbox(isCompleted: getGovernmentalStatus(govt_property)==''?false:true),
-                                          /*Text(
+                                          *//*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),
-                                          ),*/
+                                          ),*//*
                                           Flexible(
                                             child: Container(
                                               child: Text(setapptext(key: 'key_govt_proprty'),
@@ -820,8 +905,8 @@ class _ViewList5State extends State<ViewList5> {
                                   )
                               ),
                             ),
-                          ),
-                          if(current_use_of_property=='8')Container(
+                          ),*/
+                          if(current_use_of_property != "9"&& propertySubUseValues.length>1)Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -845,14 +930,17 @@ class _ViewList5State extends State<ViewList5> {
                                             ? TextDirection.ltr
                                             : TextDirection.rtl,
                                         children: <Widget>[
-                                          completedcheckbox(isCompleted: getSpecifiedUse(specified_current_use) ==''?false:true),
+                                          completedcheckbox(isCompleted: !((((redeemable_property?.isEmpty ?? true)||(redeemable_property == "0"))
+                                              && ((proprietary_properties?.isEmpty ?? true)||(proprietary_properties == "0"))
+                                              && ((specified_current_use?.isEmpty ?? true)||(specified_current_use == "0"))
+                                              && ((govt_property?.isEmpty ?? true)||(govt_property == "0"))))),
                                           /*Text(
                                             '*',
                                             style: TextStyle(color: Colors.red, fontSize: 18),
                                           ),*/
                                           Flexible(
                                             child: Container(
-                                              child: Text(setapptext(key: 'key_type_of_currentuse'),
+                                              child: Text(setapptext(key: 'key_sub_usage_type'),
                                                 overflow: TextOverflow.visible,
                                                 softWrap: true,
                                                 style: TextStyle(),
@@ -868,7 +956,7 @@ class _ViewList5State extends State<ViewList5> {
                                       SizedBox(height: 5,),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10),
-                                        child: Text(getSpecifiedUse(specified_current_use) ?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                        child: Text(propertySubUses[redeemable_property??(proprietary_properties??(specified_current_use??govt_property))] ?? "",style: TextStyle(fontSize: 20,color: Colors.black),),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

@@ -29,6 +29,7 @@ class LocalPropertySurvey {
   String historic_site_area;
   String land_area;
   String property_type;
+  String property_mode;
   String location_of_land_area;
   String property_have_document;
   String document_type;
@@ -258,6 +259,7 @@ class LocalPropertySurvey {
       this.historic_site_area,
       this.land_area,
       this.property_type,
+      this.property_mode,
       this.location_of_land_area,
       this.property_have_document,
       this.document_type,
@@ -488,6 +490,7 @@ class LocalPropertySurvey {
         historic_site_area = map['historic_site_area'],
         land_area = map['land_area'],
         property_type = map['property_type'],
+        property_mode = map['property_mode'],
         location_of_land_area = map['location_of_land_area'],
         property_have_document = map['property_have_document'],
         document_type = map['document_type'],

@@ -280,6 +280,7 @@ Widget formcardtextfield1(
     final item,
     String initvalue,
     String headerlablekey,
+      Color headerlablekeycolor,
     CheckColor radiovalue,
     String hinttextkey,
     Function(String) onSaved,
@@ -330,7 +331,9 @@ Widget formcardtextfield1(
                       headerlablekey,
                       overflow: TextOverflow.visible,
                       softWrap: true,
-                      style: TextStyle(),
+                      style: TextStyle(
+                        color: headerlablekeycolor
+                      ),
                       textDirection:
                           locator<LanguageService>().currentlanguage == 0
                               ? TextDirection.ltr
@@ -362,6 +365,7 @@ Widget formcardtextfield1(
                 onChanged: onChanged,
                 onSaved: onSaved,
                 value: value,
+
               ),
               // child: TextFormField(
               //   autofocus: false,
@@ -829,6 +833,124 @@ Widget formcardtextfield5(
                 onChanged: onChanged,
                 onSaved: onSaved,
                 value: value,
+              ),
+              // child: TextFormField(
+              //   autofocus: false,
+              //   textDirection: locator<LanguageService>().currentlanguage == 0
+              //       ? TextDirection.ltr
+              //       : TextDirection.rtl,
+              //   enabled: enable,
+              //   keyboardType: keyboardtype,
+              //   initialValue: initvalue?.isEmpty ?? true ? "" : initvalue,
+              //   decoration: InputDecoration(
+              //     errorStyle: TextStyle(color: Colors.redAccent),
+              //     suffixIcon: suffix,
+              //     hintText: hinttextkey?.isEmpty ?? true ? "" : hinttextkey,
+              //   ),
+              //   onSaved: onSaved,
+              //   validator: validator,
+              //   onChanged: onChanged,
+              //   onFieldSubmitted: onFieldSubmitted,
+              //   inputFormatters: inputFormatters,
+              //   maxLength: maxLength,
+              //   maxLengthEnforced: true,
+              //   ///WhitelistingTextInputFormatter.digitsOnly
+              // ),
+            )
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget formcardtextfield6(
+    {TextInputType keyboardtype,
+      List<String> valuesList,
+      Map<String, String> valuesMap,
+      String initvalue,
+      String headerlablekey,
+      CheckColor radiovalue,
+      String hinttextkey,
+      Function(String) onSaved,
+      Function(String) validator,
+      Function(String) onChanged,
+      FocusNode fieldfocus,
+      TextInputAction textInputAction,
+      void Function(String) onFieldSubmitted,
+      Widget suffix,
+      bool enable,
+      int maxLength,
+      List<TextInputFormatter> inputFormatters,
+      String value,
+      bool fieldrequired = false}) {
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    padding: EdgeInsets.all(10),
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              textDirection: locator<LanguageService>().currentlanguage == 0
+                  ? TextDirection.ltr
+                  : TextDirection.rtl,
+              children: <Widget>[
+                completedcheckbox(isCompleted: radiovalue),
+                fieldrequired
+                    ? Text(
+                  '*',
+                  style: TextStyle(color: Colors.red, fontSize: 18),
+                )
+                    : SizedBox(),
+                Flexible(
+                  child: Container(
+                    child: Text(
+                      headerlablekey,
+                      overflow: TextOverflow.visible,
+                      softWrap: true,
+                      style: TextStyle(),
+                      textDirection:
+                      locator<LanguageService>().currentlanguage == 0
+                          ? TextDirection.ltr
+                          : TextDirection.rtl,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
+              child: DropdownButtonFormField<String>(
+                hint: new Text(hinttextkey),
+                items: valuesList.map((item) {
+                  return DropdownMenuItem<String>(
+                    value: item,
+                    child: Container(
+                      alignment: locator<LanguageService>().currentlanguage == 0
+                          ? Alignment.centerLeft
+                          : Alignment.centerRight,
+                      child: Text(
+                        valuesMap[item],
+                      ),
+                    ),
+                  );
+                }).toList(),
+                // validator: validate,
+                onChanged: onChanged,
+                onSaved: onSaved,
+                value: value,
+                validator: validator,
               ),
               // child: TextFormField(
               //   autofocus: false,

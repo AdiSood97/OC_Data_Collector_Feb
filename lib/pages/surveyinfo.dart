@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:kapp/controllers/task.dart';
+import 'package:kapp/utils/language_service.dart';
+import 'package:kapp/utils/locator.dart';
 import 'package:provider/provider.dart';
 import 'package:page_transition/page_transition.dart';
 import '../localization/app_translations.dart';
@@ -8,6 +12,7 @@ import '../utils/appstate.dart';
 import './generalinfoone.dart';
 import '../widgets/appformcards.dart';
 import '../models/surveyAssignment.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SurveyInfoPage extends StatefulWidget {
   SurveyInfoPage(
@@ -60,6 +65,9 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
   FocusNode _firstsurveyor;
   FocusNode _secondsurveyor;
   FocusNode _technicalsupport;
+  bool _prefAvailable = false;
+  var surveyorone;
+  var surveyorthree;
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
@@ -101,7 +109,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
             localdata = Provider.of<DBHelper>(context).singlepropertysurveys;
             localdata.editmode = 1;
           }*/
-          if (widget.surveyAssignment != null) {
+          /*if (widget.surveyAssignment != null) {
            if(widget.surveyAssignment.surveyoronename != "") {
              localdata.first_surveyor_name =
                  widget.surveyAssignment.surveyoronename;
@@ -122,7 +130,7 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                 (widget.surveyAssignment.reworkstatus?.isEmpty ?? true)
                     ? "Survey Completed"
                     : widget.surveyAssignment.reworkstatus;
-          }
+          }*/
           Navigator.pushReplacement(
             context,
             PageTransition(
@@ -291,8 +299,20 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
             localkey: widget.localsurveykey);
       });
     }
+    asyncMethod();
     super.initState();
   }
+
+  Future<void> asyncMethod() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    localdata.surveyoroneid = preferences.getString('new_id');
+    print(localdata.surveyoroneid);
+
+    setState(() {
+      _prefAvailable = true;
+    });
+  }
+
 
   @override
   void didChangeDependencies() {
@@ -309,12 +329,11 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
     if (!(widget.localsurveykey?.isEmpty ?? true)) {
       localdata = Provider.of<DBHelper>(context).singlepropertysurveys;
       //localdata.editmode = 1;
-      localdata.first_surveyor_name = localdata.first_surveyor_name;
-      localdata.senond_surveyor_name = localdata.senond_surveyor_name;
-      localdata.technical_support_name = localdata.technical_support_name;
     }
     print('pqoowieuuwiefni ${localdata.first_surveyor_name}');
     print('pqoowieuuwiefni ${localdata.surveyoroneid}');
+    print('sgsdgsdsddsf ${localdata.surveyortwoid}');
+    print('sgsdgsdsddsf ${localdata.senond_surveyor_name}');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -323,12 +342,29 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Consumer<DBHelper>(
+      body: !_prefAvailable?Center(
+        child: CircularProgressIndicator(),
+      ):Consumer<DBHelper>(
         builder: (context, dbdata, child) {
           if(localdata.editmode==1){
             localdata = dbdata.singlepropertysurveys;
           }
-          return dbdata.state == AppState.Busy
+          surveyorone = getValueForName(localdata.surveyoroneid,
+              localdata.first_surveyor_name, surveyList);
+          localdata.first_surveyor_name =
+          '${surveyorone['first_name'].trim()} ${surveyorone['last_name'].trim()}';
+          localdata.surveyoroneid = surveyorone['_id'].toString();
+          if(localdata.isrework==1){
+            if(localdata.technical_support_name != null || localdata.surveyleadid!=null){
+                  surveyorthree = getValueForName(localdata.surveyleadid,
+                      localdata.technical_support_name, surveyList)??'';
+
+                  localdata.technical_support_name =
+                      '${surveyorthree['first_name'].trim()} ${surveyorthree['last_name'].trim()}';
+                  localdata.surveyleadid = surveyorthree['_id'].toString();}
+                }
+
+                return dbdata.state == AppState.Busy
               ? Center(
                   child: CircularProgressIndicator(),
                 )
@@ -536,73 +572,82 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                   //     ),
                                   //   )
                                   : SizedBox(),
-                              formcardtextfield1(
-                                  enable: false,
-                                  fieldrequired: true,
-                                  surveyList: surveyList,
-                                  headerlablekey:
-                                      setapptext(key: 'key_first_surveyor'),
-                                  radiovalue:
-                                      localdata.first_surveyor_name?.isEmpty ??
-                                              true
-                                          ? CheckColor.Black
-                                          : CheckColor.Green,
-                                  hinttextkey:
-                                      setapptext(key: 'key_enter_1st_surveyor'),
-                                  fieldfocus: _firstsurveyor,
-                                 value: getValueForName(localdata.surveyoroneid,localdata.first_surveyor_name, surveyList),
-                                  textInputAction: TextInputAction.next,
-                                  onFieldSubmitted: (_) {
-                                    _firstsurveyor.unfocus();
-                                    FocusScope.of(context)
-                                        .requestFocus(_secondsurveyor);
-                                  },
-                                  /*initvalue:
-                                      surveyDetails["first_name"]?.isEmpty ??
-                                              true
-                                          ? ""
-                                          : surveyDetails["first_name"],*/
-                                  validator: (dynamic value) {
-                                    if (value.trim().isEmpty) {
-                                      return setapptext(
-                                          key: 'key_field_not_blank');
-                                    }
-                                  },
-                                  onSaved: (dynamic value) {
-                                    //print("+++++++++++++++++++++3333++${value['_id']}");
-                                    localdata.first_surveyor_name =
-                                        '${value['first_name'].trim()} ${value['last_name'].trim()}';
-                                    localdata.surveyoroneid = value['_id'].trim();
-                                        setState(() {
-                                      // display1 = false;
-                                    });
-                                  },
-                                  onChanged: (dynamic value) {
-                                    print("+++++++++22+++++++${value['_id']}");
-                                    localdata.first_surveyor_name =
-                                    '${value['first_name'].trim()} ${value['last_name'].trim()}';
-                                    localdata.surveyoroneid = value['_id'].trim();
-                                    print('=-=-=-=- ${localdata.first_surveyor_name}');
-                                    setState(() {
-                                      // display1 = false;
-                                    });
-                                    print(
-                                        "+++++++++++++++++++++3333++,${localdata.first_surveyor_name}");
-                                  }),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                              width: 400,
+                              //padding: EdgeInsets.only(left: 20),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    textDirection: locator<LanguageService>().currentlanguage == 0
+                                        ? TextDirection.ltr
+                                        : TextDirection.rtl,
+                                    children: <Widget>[
+                                      completedcheckbox(isCompleted: true),
+                                      Text(
+                                        '*',
+                                        style: TextStyle(color: Colors.red, fontSize: 18),
+                                      ),
+                                      Flexible(
+                                        child: Container(
+                                          child: Text(setapptext(key: 'key_first_surveyor'),
+                                            overflow: TextOverflow.visible,
+                                            softWrap: true,
+                                            style: TextStyle(),
+                                            textDirection:
+                                            locator<LanguageService>().currentlanguage == 0
+                                                ? TextDirection.ltr
+                                                : TextDirection.rtl,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 5,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Text(localdata.first_surveyor_name,style: TextStyle(fontSize: 18),),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                    child: Divider(
+                                      height: 5,
+                                      color: Colors.grey[900],
+                                    ),
+                                  ),
+                                  SizedBox(height: 10,)
+                                ],
+                              )
+                          ),
+                        ),
+                      ),
                               formcardtextfield1(
                                   enable: false,
                                   value: getValueForName(localdata.surveyortwoid,localdata.senond_surveyor_name, surveyList),
                                   fieldrequired: true,
                                   surveyList: surveyList,
                                   headerlablekey:
-                                      setapptext(key: 'key_second_surveyor'),
+                                  setapptext(key: 'key_second_surveyor'),
                                   radiovalue:
-                                      localdata.senond_surveyor_name?.isEmpty ??
-                                              true
-                                          ? CheckColor.Black
-                                          : CheckColor.Green,
+                                  localdata.senond_surveyor_name?.isEmpty ??
+                                      true
+                                      ? CheckColor.Black
+                                      : CheckColor.Green,
                                   hinttextkey:
-                                      setapptext(key: 'key_enter_1st_surveyor'),
+                                  setapptext(key: 'key_enter_1st_surveyor'),
                                   fieldfocus: _secondsurveyor,
                                   textInputAction: TextInputAction.next,
                                   onFieldSubmitted: (_) {
@@ -632,42 +677,106 @@ class _SurveyInfoPageState extends State<SurveyInfoPage> {
                                     localdata.surveyortwoid = value['_id'].trim();
                                     setState(() {});
                                   }),
-                              formcardtextfield1(
+                              if(surveyorthree == null)Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Container(
+                                      width: 400,
+                                      //padding: EdgeInsets.only(left: 20),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            textDirection: locator<LanguageService>().currentlanguage == 0
+                                                ? TextDirection.ltr
+                                                : TextDirection.rtl,
+                                            children: <Widget>[
+                                              completedcheckbox(isCompleted: false),
+
+                                              Flexible(
+                                                child: Container(
+                                                  child: Text(setapptext(key: 'key_name_technical_support'), style:TextStyle(
+                                                    color: Colors.grey,
+                                                  ),
+                                                    overflow: TextOverflow.visible,
+                                                    softWrap: true,
+                                                    textDirection:
+                                                    locator<LanguageService>().currentlanguage == 0
+                                                        ? TextDirection.ltr
+                                                        : TextDirection.rtl,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: 5,),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 10),
+                                            child: Text("",style: TextStyle(fontSize: 18),),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                            child: Divider(
+                                              height: 5,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          SizedBox(height: 10,)
+                                        ],
+                                      )
+                                  ),
+                                ),
+                              ),
+                              if(surveyorthree != null)formcardtextfield1(
                                   enable: false,
-                                 value: getValueForName(localdata.surveyleadid,localdata.technical_support_name, surveyList),
-                                  fieldrequired: true,
+                                  value: getValueForName(localdata.technical_support_name,localdata.surveyleadid, surveyList),
+                                  fieldrequired: false,
                                   surveyList: surveyList,
                                   headerlablekey: setapptext(
                                       key: 'key_name_technical_support'),
+                                headerlablekeycolor: (surveyorthree == null)?
+                                Colors.grey:Colors.black,
                                   radiovalue: localdata.technical_support_name
-                                              ?.isEmpty ??
-                                          true
+                                      ?.isEmpty ??
+                                      true
                                       ? CheckColor.Black
                                       : CheckColor.Green,
-                                  hinttextkey:
-                                      setapptext(key: 'key_enter_1st_surveyor'),
+                                  hinttextkey:(surveyorthree == null)?
+                                  "":(surveyorthree['first_name']+' '+surveyorthree['last_name']),
                                   fieldfocus: _technicalsupport,
                                   textInputAction: TextInputAction.done,
                                   onFieldSubmitted: (_) {
                                     _technicalsupport.unfocus();
                                   },
-                                  /*initvalue: localdata.technical_support_name
-                                              ?.isEmpty ??
-                                          true
+                                  initvalue: localdata.technical_support_name
+                                      ?.isEmpty ??
+                                      true
                                       ? ""
-                                      : localdata.technical_support_name,*/
+                                      : localdata.technical_support_name,
                                   validator: (dynamic value) {},
                                   onSaved: (dynamic value) {
+                                    if(value!=null){
                                     localdata.technical_support_name =
                                     '${value['first_name'].trim()} ${value['last_name'].trim()}';
-                                    localdata.surveyleadid = value['_id'].trim();
+                                    localdata.surveyleadid = value['_id'].trim();}
                                   },
-                                  onChanged: (dynamic value) {
+                                  onChanged: null,/*(dynamic value) {
                                     localdata.technical_support_name =
                                     '${value['first_name'].trim()} ${value['last_name'].trim()}';
                                     localdata.surveyleadid = value['_id'].trim();
                                     setState(() {});
-                                  }),
+                                  }*/
+                              ),
                             ],
                           ),
                         ),

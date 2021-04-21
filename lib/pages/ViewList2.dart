@@ -338,7 +338,7 @@ class _ViewPage2State extends State<ViewPage2> {
                                               ? TextDirection.ltr
                                               : TextDirection.rtl,
                                           children: <Widget>[
-                                            completedcheckbox(isCompleted: getYesNo(natural_threaten)==''?false:true),
+                                            completedcheckbox(isCompleted: natural_threaten=='0'?false:true),
                                             /*Text(
                                               '*',
                                               style: TextStyle(color: Colors.red, fontSize: 18),

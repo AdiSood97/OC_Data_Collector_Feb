@@ -37,8 +37,9 @@ class AuthModel with ChangeNotifier {
         var preferences = await SharedPreferences.getInstance();
         var datalogin = json.decode(responce.body);
         preferences.setString("new_role_id", datalogin["user"]["role_id"][0]);
-
+        preferences.setString("new_id", datalogin["user"]["_id"]);
         print("====loginResponse =========,${datalogin["user"]["role_id"][0]}");
+        print("====loginResponse ID =========,${datalogin["user"]["_id"]}");
         if (responce.body.isNotEmpty) {
           if (json
                   .decode(responce.body)['user']['mobile_access']

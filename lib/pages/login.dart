@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:connectivity/connectivity.dart';
@@ -36,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
   String uniqueId = "Unknown";
   String _identifier = 'Unknown';
   String _macAddress = 'Unknown';
+  String release = '9';
 
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
@@ -50,6 +54,9 @@ class _LoginPageState extends State<LoginPage> {
     try {
       platformImei =
       await ImeiPlugin.getImei(shouldShowRequestPermissionRationale: false);
+      var androidInfo = await DeviceInfoPlugin().androidInfo;
+      release = androidInfo.version.release;
+      print('2847289rsdfn $release');
       String multiImei = await ImeiPlugin.getImei();
       print("MultiEmei is=${multiImei}");
       idunique = await ImeiPlugin.getId();
@@ -269,21 +276,33 @@ class _LoginPageState extends State<LoginPage> {
                                                 routeName:
                                                 routes.LanguageRoute);*/
 
-                                           if(await data.checkImei(_macAddress))
+                                            if(int.parse(release)<10)
                                             {
+                                              if (await data.checkImei(
+                                                  _platformImei.replaceAll(
+                                                      '-', ''))) {
+                                                _navigationService
+                                                    .navigateRepalceTo(
+                                                        routeName: routes
+                                                            .LanguageRoute);
+                                              } else {
+                                                showDialogSingleButton(
+                                                    context: context,
+                                                    message:
+                                                        'Device is not authorised.',
+                                                    /*\nYour IMEI is \n${_platformImei.replaceAll('-', '')}',*/
+                                                    ///TODO: Message is only in english
+                                                    title: 'Warning',
+                                                    buttonLabel: 'ok');
+                                                preferences.clear();
+                                                //BackgroundFetch.stop();
+                                              }
+                                            } else{
                                               _navigationService
                                                   .navigateRepalceTo(
-                                                      routeName:
-                                                          routes.LanguageRoute);
-                                            }else{
-                                             showDialogSingleButton(
-                                                 context: context,
-                                                 message: 'Device is not authorised.\nYour Mac Address is \n$_macAddress',///TODO: Message is only in english
-                                                 title: 'Warning',
-                                                 buttonLabel: 'ok');
-                                             preferences.clear();
-                                             //BackgroundFetch.stop();
-                                           }
+                                                  routeName: routes
+                                                      .LanguageRoute);
+                                            }
                                           } else {
                                             showDialogSingleButton(
                                                 context: context,

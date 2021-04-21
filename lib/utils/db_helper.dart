@@ -96,7 +96,7 @@ class DBHelper with ChangeNotifier {
         status_of_area_regular TEXT,slope_of_area TEXT,province TEXT,
         city TEXT,area TEXT,pass TEXT,block TEXT,part_number TEXT,
         unit_number TEXT,unit_in_parcel TEXT,street_name TEXT,
-        historic_site_area TEXT,land_area TEXT,property_type TEXT,
+        historic_site_area TEXT,land_area TEXT,property_type TEXT,property_mode TEXT,
         location_of_land_area TEXT,property_have_document TEXT,
         document_type TEXT,issued_on TEXT,place_of_issue TEXT,
         property_number TEXT,document_cover TEXT,document_page TEXT,
@@ -357,7 +357,7 @@ class DBHelper with ChangeNotifier {
         status_of_area_official,status_of_area_regular,slope_of_area,
         province,city,area,pass,block,part_number,unit_number,
         unit_in_parcel,street_name,historic_site_area,land_area,
-        property_type,location_of_land_area,property_have_document,
+        property_type,property_mode,location_of_land_area,property_have_document,
         document_type,issued_on,place_of_issue,property_number,
         document_cover,document_page,doc_reg_number,land_area_qawwala,
         property_doc_photo_1,property_doc_photo_2,property_doc_photo_3,
@@ -411,7 +411,7 @@ class DBHelper with ChangeNotifier {
         fifth_partner_note_page,fifth_partner_reg_no,fifth_partner_phote_note1,
         fifth_partner_photo_tips1,fifth_partner_photo_tips2,formval,editmode,boundaryinfonote,isrework)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
         ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
-        ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+        ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
         ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
         ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
       ''';
@@ -447,6 +447,7 @@ class DBHelper with ChangeNotifier {
         data.historic_site_area,
         data.land_area,
         data.property_type,
+        data.property_mode,
         data.location_of_land_area,
         data.property_have_document,
         data.document_type,
@@ -665,7 +666,7 @@ class DBHelper with ChangeNotifier {
         real_person_status=?,cityzenship_notice=?,issue_regarding_property=?,
         municipality_ref_number=?,natural_threaten=?,status_of_area_plan=?,status_of_area_official=?,
         status_of_area_regular=?,slope_of_area=?,province=?,city=?,area=?,pass=?,block=?,part_number=?,
-        unit_number=?,unit_in_parcel=?,street_name=?,historic_site_area=?,land_area=?,property_type=?,
+        unit_number=?,unit_in_parcel=?,street_name=?,historic_site_area=?,land_area=?,property_type=?,property_mode=?,
         location_of_land_area=?,property_have_document=?,document_type=?,issued_on=?,place_of_issue=?,
         property_number=?,document_cover=?,document_page=?,doc_reg_number=?,land_area_qawwala=?,property_doc_photo_1=?,
         property_doc_photo_2=?,property_doc_photo_3=?,property_doc_photo_4=?,odinary_doc_photo1=?,odinary_doc_photo6=?,
@@ -780,6 +781,7 @@ class DBHelper with ChangeNotifier {
         data.historic_site_area,
         data.land_area,
         data.property_type,
+        data.property_mode,
         data.location_of_land_area,
         data.property_have_document,
         data.document_type,
@@ -976,7 +978,7 @@ class DBHelper with ChangeNotifier {
         localkey
       ];
       result = await dbClient.rawUpdate(sqlquery, params);
-      print("error res============= $result");
+      print(".updateProperty res============= $result");
     } catch (error, stackTrace) {
       print("error w============= $error");
       Catcher.reportCheckedError(error, stackTrace);
@@ -1038,6 +1040,7 @@ class DBHelper with ChangeNotifier {
     }
     setState(AppState.Idle);
     notifyListeners();
+    print("--=-==-=-=-= Surveys got");
     return _propertysurveys;
   }
 
@@ -1324,6 +1327,7 @@ class DBHelper with ChangeNotifier {
 
   Future<int> addReworkSurvey(
       {List<ReworkAssignment> reworkassignments}) async {
+    print("addReworkSurvey");
     setState(AppState.Busy);
     int result = 0;
     try {
@@ -1378,7 +1382,7 @@ class DBHelper with ChangeNotifier {
                   item.unit),
             );
             if (!ispropertyexist) {
-              ReworkTask().downLoadPropertyData(
+             await ReworkTask().downLoadPropertyData(
                   propertyid: item.propertyid, taskid: item.sid);
             } else {
               await dbClient.rawQuery(
@@ -1404,6 +1408,7 @@ class DBHelper with ChangeNotifier {
   }
 
   Future<List<ReworkAssignment>> getReworkSurvey([String sid]) async {
+    print("getReworkSurvey");
     setState(AppState.Busy);
     List<ReworkAssignment> _reworks = new List<ReworkAssignment>();
     try {

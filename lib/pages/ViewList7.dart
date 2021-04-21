@@ -1,4 +1,7 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:kapp/configs/configuration.dart';
 import 'package:kapp/localization/app_translations.dart';
 import 'package:kapp/models/localpropertydata.dart';
 import 'package:kapp/pages/ViewList8.dart';
@@ -17,9 +20,42 @@ class ViewList7 extends StatefulWidget {
 
 class _ViewList7State extends State<ViewList7> {
   LocalPropertySurvey localdata= LocalPropertySurvey();
+  List<String> propertyUseNames = [];
+  List<String> propertyUseValues = [];
+  Map<String, String> propertyUses={};
+  bool gotProperty = false;
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
   }
+
+  void _propertyUseListAPI() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    var response = await http.get(Configuration.apiurl + 'mPropertyUseType?active=true', headers: {
+      "Content-Type": "application/json",
+      "Authorization": preferences.getString("accesstoken")
+    });
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      print('wieryweionhurhg o--=-=-${data1["data"] }');
+
+      for(dynamic item in data1["data"]){
+
+        propertyUseValues.add(item['value']);
+        propertyUses[item['value']] = item['name'];
+
+      }
+      propertyUseValues = propertyUseValues.toSet().toList();
+
+      setState(() {
+        gotProperty = true;
+      });
+
+    } else {
+      throw Exception('Failed to load jobs from API');
+    }
+  }
+
   Widget wrapContaint({String titel, String subtitel}) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -184,6 +220,7 @@ class _ViewList7State extends State<ViewList7> {
       type_of_use_other=preferences.getString('type_of_use_other');
       current_use_of_property=preferences.getString('current_use_of_property');
       print("Property Type is =${use_in_property_doc}");
+      _propertyUseListAPI();
 
     });
   }
@@ -192,6 +229,7 @@ class _ViewList7State extends State<ViewList7> {
     // TODO: implement initState
     super.initState();
     getData();
+
   }
   @override
   Widget build(BuildContext context) {
@@ -203,7 +241,11 @@ class _ViewList7State extends State<ViewList7> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        body:SafeArea(
+        body:!gotProperty
+            ? Center(
+          child: CircularProgressIndicator(),
+        )
+            :SafeArea(
           child: Form(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -241,7 +283,7 @@ class _ViewList7State extends State<ViewList7> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (getPropertyType(use_in_property_doc)??'')==''?false:true),
+                                              completedcheckbox(isCompleted: (use_in_property_doc??'')==''?false:true),
 
                                               Flexible(
                                                 child: Container(
@@ -261,7 +303,7 @@ class _ViewList7State extends State<ViewList7> {
                                           SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10),
-                                            child: Text(getPropertyType(use_in_property_doc)??'',style: TextStyle(fontSize: 20,color: Colors.black),),
+                                            child: Text(propertyUses[use_in_property_doc]??'',style: TextStyle(fontSize: 20,color: Colors.black),),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

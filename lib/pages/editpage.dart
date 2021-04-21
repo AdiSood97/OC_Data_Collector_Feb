@@ -413,68 +413,6 @@ Future getData() async{
                               ),
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            padding: EdgeInsets.only(top: 20,left: 10,right: 10),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Container(
-                                  width: 400,
-                                  //padding: EdgeInsets.only(left: 20),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        textDirection: locator<LanguageService>().currentlanguage == 0
-                                            ? TextDirection.ltr
-                                            : TextDirection.rtl,
-                                        children: <Widget>[
-                                          completedcheckbox(isCompleted: true),
-                                          Text(
-                                            '*',
-                                            style: TextStyle(color: Colors.red, fontSize: 18),
-                                          ),
-                                          Flexible(
-                                            child: Container(
-                                              child: Text(setapptext(key: 'key_name_technical_support'),
-                                                overflow: TextOverflow.visible,
-                                                softWrap: true,
-                                                style: TextStyle(),
-                                                textDirection:
-                                                locator<LanguageService>().currentlanguage == 0
-                                                    ? TextDirection.ltr
-                                                    : TextDirection.rtl,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(height: 5,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10),
-                                        child: Text(surveyThirdName,style: TextStyle(fontSize: 20,color: Colors.black),),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
-                                        child: Divider(
-                                          height: 2,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      SizedBox(height: 10,)
-                                    ],
-                                  )
-                              ),
-                            ),
-                          ),
                           //SizedBox(height: 100,),
 
                         ],

@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:kapp/configs/configuration.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 import '../models/localpropertydata.dart';
 import '../utils/appstate.dart';
 import '../localization/app_translations.dart';
@@ -20,7 +24,40 @@ class TypeOfUsePage extends StatefulWidget {
 
 class _TypeOfUsePageState extends State<TypeOfUsePage> {
   LocalPropertySurvey localdata;
+  List<String> propertyUseNames = [];
+  List<String> propertyUseValues = [];
+  Map<String, String> propertyUses={};
+  bool gotProperty = false;
   var _formkey = GlobalKey<FormState>();
+
+  void _propertyUseListAPI() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    var response = await http.get(Configuration.apiurl + 'mPropertyUseType?active=true', headers: {
+      "Content-Type": "application/json",
+      "Authorization": preferences.getString("accesstoken")
+    });
+
+    if (response.statusCode == 200) {
+      final data1 = json.decode(response.body);
+      print('wieryweionhurhg o--=-=-${data1["data"] }');
+
+      for(dynamic item in data1["data"]){
+
+        propertyUseValues.add(item['value']);
+        propertyUses[item['value']] = item['name'];
+
+      }
+      propertyUseValues = propertyUseValues.toSet().toList();
+
+      setState(() {
+        gotProperty = true;
+      });
+
+    } else {
+      throw Exception('Failed to load jobs from API');
+    }
+  }
+
 
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
@@ -119,6 +156,7 @@ class _TypeOfUsePageState extends State<TypeOfUsePage> {
   void initState() {
     localdata = new LocalPropertySurvey();
     localdata = widget.localdata;
+    _propertyUseListAPI();
     super.initState();
   }
 
@@ -134,7 +172,7 @@ class _TypeOfUsePageState extends State<TypeOfUsePage> {
       ),
       body: Consumer<DBHelper>(
         builder: (context, dbdata, child) {
-          return dbdata.state == AppState.Busy
+          return (!(!(dbdata.state == AppState.Busy) && gotProperty))
               ? Center(
                   child: CircularProgressIndicator(),
                 )
@@ -150,62 +188,51 @@ class _TypeOfUsePageState extends State<TypeOfUsePage> {
                         Expanded(
                           child: ListView(
                             children: <Widget>[
-                              formCardDropdown(
-                                  enable:
-                                      localdata.isdrafted == 2 ? true : false,
-                                  value:
-                                      localdata.use_in_property_doc?.isEmpty ??
-                                              true
-                                          ? "0"
-                                          : localdata.use_in_property_doc,
-                                  iscompleted: ((localdata.use_in_property_doc
-                                                  ?.isEmpty ??
-                                              true) ||
-                                          (localdata.use_in_property_doc ==
-                                              "0"))
-                                      ? CheckColor.Black
-                                      : CheckColor.Green,
-                                  headerlablekey:
-                                      setapptext(key: 'key_use_type_doc'),
-                                  dropdownitems: [
-                                    Dpvalue(
-                                        name: setapptext(
-                                            key: 'key_none_selected'),
-                                        value: "0"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_release'),
-                                        value: "1"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_commercial'),
-                                        value: "2"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_complex'),
-                                        value: "3"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_productive'),
-                                        value: "4"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_govt'),
-                                        value: "5"),
-                                    Dpvalue(
-                                        name:
-                                            setapptext(key: 'key_agriculture'),
-                                        value: "6"),
-                                    Dpvalue(
-                                        name:
-                                            setapptext(key: 'key_public_land'),
-                                        value: "7"),
-                                    Dpvalue(
-                                        name: setapptext(key: 'key_other1'),
-                                        value: "8"),
-                                  ],
-                                  onSaved: (value) {
+                              formcardtextfield6(
+
+                                value: localdata.use_in_property_doc,
+                                valuesList: propertyUseValues,
+                                valuesMap: propertyUses,
+                                enable: false,
+                                keyboardtype: TextInputType.text,
+                                headerlablekey:
+                                setapptext(key: 'key_use_type_doc'),
+                                radiovalue:
+                                localdata.use_in_property_doc?.isEmpty ?? true
+                                    ? CheckColor.Black
+                                    : CheckColor.Green,
+                                hinttextkey:
+                                setapptext(key: 'key_none_selected'),
+                                initvalue: localdata.use_in_property_doc?.isEmpty ??
+                                    true
+                                    ? ""
+                                    : localdata.use_in_property_doc,
+                                fieldrequired: false,
+                                validator: (value) {
+                                  if (value.trim().isEmpty) {
+                                    return setapptext(
+                                        key: 'key_field_not_blank');
+                                  }
+                                },
+                                onSaved: (value) {
+
+                                  localdata.use_in_property_doc = value;
+                                  print("current_use_of_property =========== $value");
+                                  //_municipalityListAPI(value);
+                                },
+                                onChanged: (value) {
+                                  setState(() {
                                     localdata.use_in_property_doc = value;
-                                  },
-                                  onChanged: (value) {
-                                    localdata.use_in_property_doc = value;
-                                    setState(() {});
-                                  }),
+                                  });
+                                  /*showLoaderDialog(context);
+                                  _municipalityListAPI(value,0);
+
+                                  setState(() {
+                                    municipalityview = true;
+                                    // _prograssbar = true;
+                                  });*/
+                                },
+                              ),
                               if (localdata.use_in_property_doc == "8") ...[
                                 formcardtextfield(
                                     maxLength: 120,

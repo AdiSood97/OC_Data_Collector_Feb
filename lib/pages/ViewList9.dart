@@ -18,6 +18,7 @@ class ViewList9 extends StatefulWidget {
 }
 
 class _ViewList9State extends State<ViewList9> {
+  bool gotData = false;
   TextEditingController emailController;
   LocalPropertySurvey localdata= LocalPropertySurvey();
   String setapptext({String key}) {
@@ -190,6 +191,7 @@ class _ViewList9State extends State<ViewList9> {
       first_partner_name_mere_individuals=preferences.getString('first_partner_name_mere_individuals');
       cityzenship_notice=preferences.getString('cityzenship_notice');
       property_type=preferences.getString('property_type');
+      gotData= true;
 
 
     });
@@ -209,7 +211,11 @@ class _ViewList9State extends State<ViewList9> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        body:SafeArea(
+        body:(!gotData)
+            ? Center(
+          child: CircularProgressIndicator(),
+        )
+            :SafeArea(
           child: Form(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -518,7 +524,7 @@ class _ViewList9State extends State<ViewList9> {
                                           SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10),
-                                            child: Text(getGender(first_partner_name_gender),style: TextStyle(fontSize: 20,color: Colors.black),),
+                                            child: Text(getGender(first_partner_name_gender??'0'),style: TextStyle(fontSize: 20,color: Colors.black),),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
@@ -702,7 +708,7 @@ class _ViewList9State extends State<ViewList9> {
                                             ],
                                           ),
                                           // SizedBox(height: 5,),
-                                          Padding(
+                                          /*Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 8, right: 8, bottom: 10),
                                             child: Container(
@@ -778,8 +784,7 @@ class _ViewList9State extends State<ViewList9> {
                                                             );
                                                           });
                                                       setState(() {});
-                                                      localdata
-                                                          .first_partner_name_email =
+                                                      first_partner_name_email =
                                                           tempval;
                                                       emailController
                                                           .text =
@@ -790,7 +795,7 @@ class _ViewList9State extends State<ViewList9> {
                                                 ],
                                               ),
                                             ),
-                                          ),
+                                          ),*/
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 8),

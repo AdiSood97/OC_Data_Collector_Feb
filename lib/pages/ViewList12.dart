@@ -548,7 +548,7 @@ class _ViewList12State extends State<ViewList12> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -641,7 +641,7 @@ class _ViewList12State extends State<ViewList12> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -714,7 +714,7 @@ class _ViewList12State extends State<ViewList12> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -800,7 +800,7 @@ class _ViewList12State extends State<ViewList12> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),

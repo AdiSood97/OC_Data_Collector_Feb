@@ -534,7 +534,7 @@ class _ViewList14State extends State<ViewList14> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -619,7 +619,7 @@ class _ViewList14State extends State<ViewList14> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),

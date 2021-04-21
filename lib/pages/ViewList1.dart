@@ -57,6 +57,24 @@ class _ViewList1State extends State<ViewList1> {
     }
     return result;
   }
+
+  String getOwnershipMode(String id)
+  {
+    var result="";
+    switch(id){
+      case "0":
+        result = setapptext(key: 'key_none_selected');
+        break;
+      case "1":
+        result = setapptext(key: 'key_real');
+        break;
+      case "2":
+        result = setapptext(key: 'key_legal');
+        break;
+    }
+    return result;
+  }
+
   String getPersionId(String id)
   {
     var result="";
@@ -170,13 +188,14 @@ class _ViewList1State extends State<ViewList1> {
       ),
     );
   }
-  String property="",person_id="",cityzenship_notice="";
+  String property="",person_id="",cityzenship_notice="", property_mode = '';
   Future getData() async{
     SharedPreferences preferences=await SharedPreferences.getInstance();
    setState(() {
      property=preferences.get('property_dispte_subject_to');
      person_id=preferences.get('real_person_status');
      cityzenship_notice=preferences.get('cityzenship_notice');
+     property_mode=preferences.get('property_mode');
      print("uewuiftfg+++++++++++++++++++++++++++++++");
      print(cityzenship_notice);
    });
@@ -386,6 +405,68 @@ class _ViewList1State extends State<ViewList1> {
                                        Padding(
                                          padding: const EdgeInsets.only(left: 40),
                                          child: Text(getSubjectConflict(cityzenship_notice),style: TextStyle(fontSize: 20,color: Colors.black),),
+                                       ),
+                                       Padding(
+                                         padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                                         child: Divider(
+                                           height: 2,
+                                           color: Colors.grey,
+                                         ),
+                                       ),
+                                       SizedBox(height: 10,)
+                                     ],
+                                   )
+                               ),
+                             ),
+                           ),
+                           Container(
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(10),
+                             ),
+                             padding: EdgeInsets.only(top: 20,left: 10,right: 10),
+                             child: Card(
+                               shape: RoundedRectangleBorder(
+                                 borderRadius: BorderRadius.circular(10),
+                               ),
+                               child: Container(
+                                   width: 400,
+                                   //padding: EdgeInsets.only(left: 20),
+                                   decoration: BoxDecoration(
+                                     border: Border.all(color: Color.fromRGBO(176, 174, 171, 1), width: 1),
+                                     borderRadius: BorderRadius.circular(10),
+                                   ),
+                                   child: Column(
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+                                       Row(
+                                         textDirection: locator<LanguageService>().currentlanguage == 0
+                                             ? TextDirection.ltr
+                                             : TextDirection.rtl,
+                                         children: <Widget>[
+                                           completedcheckbox(isCompleted: true),
+                                           Text(
+                                             '*',
+                                             style: TextStyle(color: Colors.red, fontSize: 18),
+                                           ),
+                                           Flexible(
+                                             child: Container(
+                                               child: Text(setapptext(key: 'key_mode_ownership'),
+                                                 overflow: TextOverflow.visible,
+                                                 softWrap: true,
+                                                 style: TextStyle(),
+                                                 textDirection:
+                                                 locator<LanguageService>().currentlanguage == 0
+                                                     ? TextDirection.ltr
+                                                     : TextDirection.rtl,
+                                               ),
+                                             ),
+                                           ),
+                                         ],
+                                       ),
+                                       SizedBox(height: 5,),
+                                       Padding(
+                                         padding: const EdgeInsets.only(left: 40),
+                                         child: Text(getOwnershipMode(property_mode),style: TextStyle(fontSize: 20,color: Colors.black),),
                                        ),
                                        Padding(
                                          padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

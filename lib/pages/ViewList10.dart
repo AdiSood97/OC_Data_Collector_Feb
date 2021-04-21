@@ -144,7 +144,7 @@ class _ViewList10State extends State<ViewList10> {
     );
   }
   String tempval = "", property_type='';
-  String info_photo_hint_sukuk_number="",info_photo_hint_cover_note="",info_photo_hint_note_page="",info_photo_hint_reg_no="";
+  String info_photo_hint_sukuk_number="",info_photo_hint_cover_note="",info_photo_hint_note_page="",info_photo_hint_reg_no="", info_photo_hint_photo_note1 ='',info_photo_hint_photo_tips1='',info_photo_hint_photo_tips2='';
   Future getData() async {
     SharedPreferences preferences=await SharedPreferences.getInstance();
     setState(() {
@@ -152,6 +152,10 @@ class _ViewList10State extends State<ViewList10> {
       info_photo_hint_cover_note=preferences.getString('info_photo_hint_cover_note');
       info_photo_hint_note_page=preferences.getString('info_photo_hint_note_page');
       info_photo_hint_reg_no=preferences.getString('info_photo_hint_reg_no');
+      info_photo_hint_photo_note1 =preferences.getString('info_photo_hint_photo_note1');
+      print(info_photo_hint_photo_note1);
+          info_photo_hint_photo_tips1 =preferences.getString('info_photo_hint_photo_tips1');
+          info_photo_hint_photo_tips2 = preferences.getString('info_photo_hint_photo_tips2');
       property_type=preferences.getString('property_type');
     });
   }
@@ -457,7 +461,7 @@ class _ViewList10State extends State<ViewList10> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: localdata.info_photo_hint_photo_note1??""==""?false:true),
+                                                isCompleted: (localdata.info_photo_hint_photo_note1??"")==""?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -467,100 +471,7 @@ class _ViewList10State extends State<ViewList10> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 8, right: 8, bottom: 10),
-                                          child: Container(
-                                            padding: EdgeInsets.only(
-                                                left: 10, right: 10, top: 10),
-                                            child: Column(
-                                              children: <Widget>[
-                                                RaisedButton(
-                                                  child: Text(setapptext(
-                                                      key:
-                                                      'key_capture_image')),
-                                                  onPressed:
-                                                  localdata.isdrafted == 2
-                                                      ? null
-                                                      : () async {
-                                                    tempval = localdata
-                                                        .info_photo_hint_reg_no;
 
-                                                    showModalBottomSheet(
-                                                        context:
-                                                        context,
-                                                        builder:
-                                                            (context) {
-                                                          return Container(
-                                                            child:
-                                                            Column(
-                                                              mainAxisSize:
-                                                              MainAxisSize.min,
-                                                              mainAxisAlignment:
-                                                              MainAxisAlignment.center,
-                                                              crossAxisAlignment:
-                                                              CrossAxisAlignment.center,
-                                                              children: <
-                                                                  Widget>[
-                                                                Container(
-                                                                  padding:
-                                                                  EdgeInsets.all(8),
-                                                                  //decoration: BoxDecoration(color: Colors.blue),
-                                                                  child:
-                                                                  Text(
-                                                                    "Pick the image",
-                                                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                                                  ),
-                                                                ),
-                                                                Divider(),
-                                                                GestureDetector(
-                                                                  onTap:
-                                                                      () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.camera);
-                                                                    Navigator.pop(context);
-                                                                    setState(() {});
-                                                                  },
-                                                                  child:
-                                                                  Text(
-                                                                    "Use Camera",
-                                                                    style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                  ),
-                                                                ),
-                                                                Divider(),
-                                                                GestureDetector(
-                                                                  onTap:
-                                                                      () async {
-                                                                    localdata.info_photo_hint_photo_note1 = await appimagepicker(source: ImageSource.gallery);
-                                                                    Navigator.pop(context);
-                                                                    setState(() {});
-                                                                  },
-                                                                  child:
-                                                                  Text(
-                                                                    "Use Gallery",
-                                                                    style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                  ),
-                                                                ),
-                                                                SizedBox(
-                                                                  height:
-                                                                  20,
-                                                                )
-                                                              ],
-                                                            ),
-                                                          );
-                                                        });
-                                                    setState(() {});
-                                                    localdata
-                                                        .info_photo_hint_reg_no =
-                                                        tempval;
-                                                    _regno.text =
-                                                        tempval;
-                                                    setState(() {});
-                                                  },
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -574,20 +485,17 @@ class _ViewList10State extends State<ViewList10> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_note1
+                                              child: info_photo_hint_photo_note1
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_note1)
+                                                  : File(info_photo_hint_photo_note1)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_note1),
+                                                File(info_photo_hint_photo_note1),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(
@@ -626,7 +534,7 @@ class _ViewList10State extends State<ViewList10> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: localdata.info_photo_hint_photo_tips1??""==""?false:true),
+                                                isCompleted: (localdata.info_photo_hint_photo_tips1??"")==""?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -636,7 +544,7 @@ class _ViewList10State extends State<ViewList10> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -720,7 +628,7 @@ class _ViewList10State extends State<ViewList10> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -734,20 +642,17 @@ class _ViewList10State extends State<ViewList10> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips1
+                                              child: info_photo_hint_photo_tips1
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_tips1)
+                                                  : File(info_photo_hint_photo_tips1)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_tips1),
+                                                File(info_photo_hint_photo_tips1),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(
@@ -786,7 +691,7 @@ class _ViewList10State extends State<ViewList10> {
                                         Row(
                                           children: <Widget>[
                                             completedcheckbox(
-                                                isCompleted: localdata.info_photo_hint_photo_tips2??""==""?false:true),
+                                                isCompleted: (localdata.info_photo_hint_photo_tips2??"")==""?false:true),
                                             Flexible(
                                               child: Text(
                                                 setapptext(
@@ -796,7 +701,7 @@ class _ViewList10State extends State<ViewList10> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -880,7 +785,7 @@ class _ViewList10State extends State<ViewList10> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -894,20 +799,17 @@ class _ViewList10State extends State<ViewList10> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips2
+                                              child: info_photo_hint_photo_tips2
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
                                                 child: Text(setapptext(
                                                     key: 'key_no_image')),
                                               )
-                                                  : File(localdata
-                                                  .info_photo_hint_photo_tips2)
+                                                  : File(info_photo_hint_photo_tips2)
                                                   .existsSync()
                                                   ? Image.file(
-                                                File(localdata
-                                                    .info_photo_hint_photo_tips2),
+                                                File(info_photo_hint_photo_tips2),
                                               )
                                                   : Center(
                                                 child: Text(setapptext(

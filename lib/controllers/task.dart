@@ -126,7 +126,7 @@ class TaskModel with ChangeNotifier {
         if(responseJson['first_name'] != null){
         result = responseJson['first_name'] + " " + responseJson['last_name'];}
       } else if (responce.statusCode == 401) {
-        AuthModel().generateRefreshToken().then((_) { ///TOKEN REFRESHING MANY TIMES
+        AuthModel().generateRefreshToken().then((_) {
           getUserName(userid: userid);
         });
       }
@@ -153,4 +153,6 @@ class TaskModel with ChangeNotifier {
     }
     return modifiedassignment;
   }
+
+
 }

@@ -83,7 +83,7 @@ class _GeneralInfoOnePageState extends State<GeneralInfoOnePage> {
             PageTransition(
                 child: SurveyInfoPage(
                   localdata: localdata,
-                  surveyList: surveyList,
+                  surveyList: widget.surveyList,
                 ),
                 type: PageTransitionType.leftToRight));
       },
@@ -267,6 +267,52 @@ class _GeneralInfoOnePageState extends State<GeneralInfoOnePage> {
                                   validate: (value) {
                                     if ((value.isEmpty) || value == "0") {
                                       return setapptext(key: 'key_required');
+                                    }
+                                  }),
+                              formCardDropdown(
+                                  fieldrequired: true,
+                                  enable: localdata.isdrafted == 2
+                                      ? true
+                                      : false,
+                                  value:
+                                  localdata.property_mode?.isEmpty ??
+                                      true
+                                      ? "0"
+                                      : localdata.property_mode,
+                                  iscompleted: ((localdata.property_mode
+                                      ?.isEmpty ??
+                                      true) ||
+                                      (localdata.property_mode ==
+                                          "0"))
+                                      ? CheckColor.Black
+                                      : CheckColor.Green,
+                                  headerlablekey: setapptext(
+                                      key: 'key_mode_ownership'),
+                                  dropdownitems: [
+                                    Dpvalue(
+                                        name: setapptext(
+                                            key: 'key_none_selected'),
+                                        value: "0"),
+                                    Dpvalue(
+                                        name: setapptext(key: 'key_real'),
+                                        value: "1"),
+                                    Dpvalue(
+                                        name: setapptext(
+                                            key: 'key_legal'),
+                                        value: "2"),
+                                  ],
+                                  onSaved: (String value) {
+                                    localdata.property_mode = value;
+                                  },
+                                  onChanged: (value) {
+                                    localdata.property_mode = value;
+
+                                    setState(() {});
+                                  },
+                                  validate: (value) {
+                                    if ((value.isEmpty) || value == "0") {
+                                      return setapptext(
+                                          key: 'key_required');
                                     }
                                   }),
                             ],

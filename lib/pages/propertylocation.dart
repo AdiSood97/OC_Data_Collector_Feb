@@ -30,7 +30,10 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
   bool gozarview = false;
   bool municipalityview = false;
   bool nahiaview = false;
-  bool _prograssbar = true;
+  bool _prograssbarProvince = true;
+  bool _prograssbarMuni = true;
+  bool _prograssbarNahia = true;
+  bool _prograssbarGozar = true;
   var _formkey = GlobalKey<FormState>();
 
   void _provinceListAPI(String id) async {
@@ -46,12 +49,12 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
       if(data1["data"] is String){
         setState(() {
           provinceList.add(data1["data"].toString());
-          _prograssbar = false;
+          _prograssbarProvince = false;
         });
       }else{
         setState(() {
           provinceList=data1["data"];
-          _prograssbar = false;
+          _prograssbarProvince = false;
         });
       }
 
@@ -70,7 +73,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
       final data1 = json.decode(response.body);
       setState(() {
         municipalityList = data1["data"];
-        _prograssbar = false;
+        _prograssbarMuni = false;
         municipalityview = true;
 
       });
@@ -95,7 +98,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
       final data1 = json.decode(response.body);
       setState(() {
         nahiaList = data1["data"];
-        _prograssbar = false;
+        _prograssbarNahia = false;
         nahiaview = true;
       });
       if(editmode==0){
@@ -115,7 +118,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
       final data1 = json.decode(response.body);
       setState(() {
         gozarList = data1["data"];
-        _prograssbar = false;
+        _prograssbarGozar = false;
         gozarview = true;
 
       });
@@ -423,8 +426,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: _prograssbar == true
-          ? new Center(
+      body: (localdata.editmode==1?((_prograssbarProvince&&_prograssbarMuni&&_prograssbarNahia&&_prograssbarGozar)):_prograssbarProvince) ? new Center(
               child: new CircularProgressIndicator(),
             )
           : Consumer<DBHelper>(
@@ -860,6 +862,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
                                         }),
                                     formcardtextfield(
                                         maxLength: 9,
+                                        fieldrequired: true,
                                         inputFormatters: [
                                           WhitelistingTextInputFormatter(
                                               RegExp(r'^[0-9.]*$'))
@@ -888,7 +891,13 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
                                         onChanged: (value) {
                                           localdata.land_area = value.trim();
                                           setState(() {});
-                                        }),
+                                        },
+                                      validator: (value) {
+                                        if (value.trim().isEmpty) {
+                                          return setapptext(
+                                              key: 'key_field_not_blank');
+                                        }
+                                      },),
                                     formCardDropdown(
                                         fieldrequired: true,
                                         enable: localdata.isdrafted == 2
@@ -1005,6 +1014,7 @@ class _PropertyLocationPageState extends State<PropertyLocationPage> {
       if(provinceList[i] == province){
         print('=-=-=-=-000---0-0--0 ${provinceList[i]}');
         return provinceList[i];
+
       }
     }
   }

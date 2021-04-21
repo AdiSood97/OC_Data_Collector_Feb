@@ -745,96 +745,7 @@ class _ViewList6State extends State<ViewList6> {
                                             ],
                                           ),
                                           // SizedBox(height: 5,),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8, right: 8, bottom: 10),
-                                            child: Container(
-                                              padding: EdgeInsets.only(
-                                                  left: 10, right: 10, top: 10),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  RaisedButton(
-                                                    child: Text(
-                                                      setapptext(
-                                                          key:
-                                                          'key_capture_image'),
-                                                    ),
-                                                    onPressed:
-                                                    localdata.isdrafted == 2
-                                                        ? null
-                                                        : () async {
-                                                      tempval = localdata
-                                                          .land_area_qawwala;
 
-                                                      showModalBottomSheet(
-                                                          context:
-                                                          context,
-                                                          builder:
-                                                              (context) {
-                                                            return Container(
-                                                              child:
-                                                              Column(
-                                                                mainAxisSize:
-                                                                MainAxisSize.min,
-                                                                mainAxisAlignment:
-                                                                MainAxisAlignment.center,
-                                                                crossAxisAlignment:
-                                                                CrossAxisAlignment.center,
-                                                                children: <
-                                                                    Widget>[
-                                                                  Container(
-                                                                    padding: EdgeInsets.all(8),
-                                                                    //decoration: BoxDecoration(color: Colors.blue),
-                                                                    child: Text(
-                                                                      "Pick the image",
-                                                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      // localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.camera);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Camera",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      //  localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.gallery);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Gallery",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height: 20,
-                                                                  )
-                                                                ],
-                                                              ),
-                                                            );
-                                                          });
-                                                      setState(() {});
-                                                      localdata
-                                                          .land_area_qawwala =
-                                                          tempval;
-                                                      _proareaowner
-                                                          .text =
-                                                          tempval;
-                                                      setState(() {});
-                                                    },
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 8),
@@ -916,96 +827,6 @@ class _ViewList6State extends State<ViewList6> {
                                           // SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                left: 8, right: 8, bottom: 10),
-                                            child: Container(
-                                              padding: EdgeInsets.only(
-                                                  left: 10, right: 10, top: 10),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  RaisedButton(
-                                                    child: Text(
-                                                      setapptext(
-                                                          key:
-                                                          'key_capture_image'),
-                                                    ),
-                                                    onPressed:
-                                                    localdata.isdrafted == 2
-                                                        ? null
-                                                        : () async {
-                                                      tempval = localdata
-                                                          .land_area_qawwala;
-
-                                                      showModalBottomSheet(
-                                                          context:
-                                                          context,
-                                                          builder:
-                                                              (context) {
-                                                            return Container(
-                                                              child:
-                                                              Column(
-                                                                mainAxisSize:
-                                                                MainAxisSize.min,
-                                                                mainAxisAlignment:
-                                                                MainAxisAlignment.center,
-                                                                crossAxisAlignment:
-                                                                CrossAxisAlignment.center,
-                                                                children: <
-                                                                    Widget>[
-                                                                  Container(
-                                                                    padding: EdgeInsets.all(8),
-                                                                    //decoration: BoxDecoration(color: Colors.blue),
-                                                                    child: Text(
-                                                                      "Pick the image",
-                                                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      // localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.camera);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Camera",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      //  localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.gallery);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Gallery",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height: 20,
-                                                                  )
-                                                                ],
-                                                              ),
-                                                            );
-                                                          });
-                                                      setState(() {});
-                                                      localdata
-                                                          .land_area_qawwala =
-                                                          tempval;
-                                                      _proareaowner
-                                                          .text =
-                                                          tempval;
-                                                      setState(() {});
-                                                    },
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
                                                 bottom: 8),
                                             child: Center(
                                               child: Container(
@@ -1082,97 +903,6 @@ class _ViewList6State extends State<ViewList6> {
                                               ),
                                             ],
                                           ),
-                                          // SizedBox(height: 5,),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8, right: 8, bottom: 10),
-                                            child: Container(
-                                              padding: EdgeInsets.only(
-                                                  left: 10, right: 10, top: 10),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  RaisedButton(
-                                                    child: Text(
-                                                      setapptext(
-                                                          key:
-                                                          'key_capture_image'),
-                                                    ),
-                                                    onPressed:
-                                                    localdata.isdrafted == 2
-                                                        ? null
-                                                        : () async {
-                                                      tempval = localdata
-                                                          .land_area_qawwala;
-
-                                                      showModalBottomSheet(
-                                                          context:
-                                                          context,
-                                                          builder:
-                                                              (context) {
-                                                            return Container(
-                                                              child:
-                                                              Column(
-                                                                mainAxisSize:
-                                                                MainAxisSize.min,
-                                                                mainAxisAlignment:
-                                                                MainAxisAlignment.center,
-                                                                crossAxisAlignment:
-                                                                CrossAxisAlignment.center,
-                                                                children: <
-                                                                    Widget>[
-                                                                  Container(
-                                                                    padding: EdgeInsets.all(8),
-                                                                    //decoration: BoxDecoration(color: Colors.blue),
-                                                                    child: Text(
-                                                                      "Pick the image",
-                                                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      // localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.camera);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Camera",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  Divider(),
-                                                                  GestureDetector(
-                                                                    onTap: () async {
-                                                                      //  localdata.property_doc_photo_1 = await appimagepicker(source: ImageSource.gallery);
-                                                                      Navigator.pop(context);
-                                                                      setState(() {});
-                                                                    },
-                                                                    child: Text(
-                                                                      "Use Gallery",
-                                                                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                                                                    ),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height: 20,
-                                                                  )
-                                                                ],
-                                                              ),
-                                                            );
-                                                          });
-                                                      setState(() {});
-                                                      localdata
-                                                          .land_area_qawwala =
-                                                          tempval;
-                                                      _proareaowner
-                                                          .text =
-                                                          tempval;
-                                                      setState(() {});
-                                                    },
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ),
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 8),
@@ -1232,10 +962,10 @@ class _ViewList6State extends State<ViewList6> {
                                                 : TextDirection.rtl,
                                             children: <Widget>[
                                               completedcheckbox(isCompleted: (property_doc_photo_4??'')==''?false:true),
-                                              Text(
+                                              /*Text(
                                                 '*',
                                                 style: TextStyle(color: Colors.red, fontSize: 18),
-                                              ),
+                                              ),*/
                                               Flexible(
                                                 child: Container(
                                                   child: Text(setapptext(key: 'key_Property_Document_Photo-4'),
@@ -1252,7 +982,7 @@ class _ViewList6State extends State<ViewList6> {
                                             ],
                                           ),
                                           // SizedBox(height: 5,),
-                                          Padding(
+                                          /*Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 8, right: 8, bottom: 10),
                                             child: Container(
@@ -1341,7 +1071,7 @@ class _ViewList6State extends State<ViewList6> {
                                                 ],
                                               ),
                                             ),
-                                          ),
+                                          ),*/
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 8),

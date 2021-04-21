@@ -75,7 +75,8 @@ class AppSync with ChangeNotifier {
               "road_name": propertydata.street_name,
               "historical_value": propertydata.historic_site_area,
               "parcel_area": propertydata.land_area,
-              "ownership_type": propertydata.property_type
+              "ownership_type": propertydata.property_type,
+              "ownership_mode": propertydata.property_mode
             },
             "zones": propertydata.location_of_land_area,
             "doc_presence_state": propertydata.property_have_document,

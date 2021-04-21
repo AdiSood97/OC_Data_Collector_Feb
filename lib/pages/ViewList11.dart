@@ -740,7 +740,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -824,7 +824,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -838,8 +838,7 @@ class _ViewList11State extends State<ViewList11> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips1
+                                              child: second_partner_image
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
@@ -1146,7 +1145,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -1230,7 +1229,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -1303,7 +1302,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -1387,7 +1386,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -1460,7 +1459,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -1544,7 +1543,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -2067,7 +2066,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -2151,7 +2150,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -2165,8 +2164,7 @@ class _ViewList11State extends State<ViewList11> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips1
+                                              child: third_partner_image
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
@@ -2473,7 +2471,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -2557,7 +2555,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -2630,7 +2628,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -2714,7 +2712,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -2787,7 +2785,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -2871,7 +2869,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -3394,7 +3392,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -3478,7 +3476,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -3492,8 +3490,7 @@ class _ViewList11State extends State<ViewList11> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips1
+                                              child: fourth_partner_image
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
@@ -3800,7 +3797,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -3884,7 +3881,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -3957,7 +3954,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -4041,7 +4038,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -4114,7 +4111,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -4198,7 +4195,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -4721,7 +4718,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -4805,7 +4802,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -4819,8 +4816,7 @@ class _ViewList11State extends State<ViewList11> {
                                                   .size
                                                   .width /
                                                   2,
-                                              child: localdata
-                                                  .info_photo_hint_photo_tips1
+                                              child:fifth_partner_image
                                                   ?.isEmpty ??
                                                   true
                                                   ? Center(
@@ -5127,7 +5123,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -5211,7 +5207,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -5284,7 +5280,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -5368,7 +5364,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
@@ -5441,7 +5437,7 @@ class _ViewList11State extends State<ViewList11> {
                                             ),
                                           ],
                                         ),
-                                        Padding(
+                                        /*Padding(
                                           padding: const EdgeInsets.only(
                                               left: 8, right: 8, bottom: 10),
                                           child: Container(
@@ -5525,7 +5521,7 @@ class _ViewList11State extends State<ViewList11> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                         Padding(
                                           padding:
                                           const EdgeInsets.only(bottom: 8),
