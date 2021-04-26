@@ -9,6 +9,7 @@ import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:kapp/widgets/appformcards.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ListView13.dart';
@@ -485,7 +486,8 @@ class _ViewList14State extends State<ViewList14> {
                                           SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10),
-                                            child: Text(safari_booklet_issue_date??'',style: TextStyle(fontSize: 20,color: Colors.black),),
+                                            child: Text(((Gregorian.fromDateTime((DateTime.fromMillisecondsSinceEpoch(int.parse(safari_booklet_issue_date==''?'0':safari_booklet_issue_date)*1000)))).toJalali().toString()).split('(')[1].replaceAll(',', '/').replaceAll(')', '')
+        ??'',style: TextStyle(fontSize: 20,color: Colors.black),),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

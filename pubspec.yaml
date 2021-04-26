@@ -1,7 +1,7 @@
 name: kapp
 description: A new Flutter project.
 
-version: 1.3.13+22
+version: 1.3.21+22
 
 environment:
   sdk: ">=2.3.1 <3.0.0"
@@ -37,6 +37,7 @@ dependencies:
   platform_device_id: any
   imei_plugin: any
   get_mac: any
+  shamsi_date: any
 
 
 dev_dependencies:

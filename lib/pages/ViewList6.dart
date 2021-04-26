@@ -6,6 +6,7 @@ import 'package:kapp/pages/ViewList7.dart';
 import 'package:kapp/utils/language_service.dart';
 import 'package:kapp/utils/locator.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ViewList5.dart';
@@ -312,7 +313,7 @@ class _ViewList6State extends State<ViewList6> {
                                           SizedBox(height: 5,),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10),
-                                            child: Text(issued_on??'',style: TextStyle(fontSize: 20,color: Colors.black),),
+                                            child: Text(((Gregorian.fromDateTime((DateTime.fromMillisecondsSinceEpoch(int.parse(issued_on)*1000)))).toJalali().toString()).split('(')[1].replaceAll(',', '/').replaceAll(')', '')??'',style: TextStyle(fontSize: 20,color: Colors.black),),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 10,right: 10,top: 10),

@@ -91,7 +91,7 @@ class AppSync with ChangeNotifier {
               "doc_property_area": propertydata.land_area_qawwala,
               "doc_img_1": propertydata.property_doc_photo_1?.isEmpty ?? true
                   ? ""
-                  : (propertydata.property_doc_photo_1),
+                  : basename(propertydata.property_doc_photo_1),
               "doc_img_2": propertydata.property_doc_photo_2?.isEmpty ?? true
                   ? ""
                   : basename(propertydata.property_doc_photo_2),
@@ -122,8 +122,7 @@ class AppSync with ChangeNotifier {
             "business_other_type": propertydata.unspecified_current_use_type,
             "business_licence": {
               "units_with_licence": propertydata.number_of_business_unit,
-              "units_without_licence":
-                  propertydata.business_unit_have_no_license,
+              "units_without_licence": propertydata.business_unit_have_no_license,
               "other": propertydata.business_license_another
             },
             "owner_or_first_partner_info": {

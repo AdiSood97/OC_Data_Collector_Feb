@@ -29,6 +29,8 @@ class _ViewList7State extends State<ViewList7> {
   }
 
   void _propertyUseListAPI() async {
+    propertyUseValues.add('0');
+    propertyUses['0']='None Selected';
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var response = await http.get(Configuration.apiurl + 'mPropertyUseType?active=true', headers: {
       "Content-Type": "application/json",
@@ -283,7 +285,7 @@ class _ViewList7State extends State<ViewList7> {
                                                 ? TextDirection.ltr
                                                 : TextDirection.rtl,
                                             children: <Widget>[
-                                              completedcheckbox(isCompleted: (use_in_property_doc??'')==''?false:true),
+                                              completedcheckbox(isCompleted: ((use_in_property_doc??'')==''|| (use_in_property_doc??'')=='0')?false:true),
 
                                               Flexible(
                                                 child: Container(

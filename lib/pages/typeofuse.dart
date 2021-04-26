@@ -24,13 +24,14 @@ class TypeOfUsePage extends StatefulWidget {
 
 class _TypeOfUsePageState extends State<TypeOfUsePage> {
   LocalPropertySurvey localdata;
-  List<String> propertyUseNames = [];
   List<String> propertyUseValues = [];
   Map<String, String> propertyUses={};
   bool gotProperty = false;
   var _formkey = GlobalKey<FormState>();
 
   void _propertyUseListAPI() async {
+    propertyUseValues.add('0');
+    propertyUses['0']='None Selected';
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var response = await http.get(Configuration.apiurl + 'mPropertyUseType?active=true', headers: {
       "Content-Type": "application/json",
@@ -190,7 +191,7 @@ class _TypeOfUsePageState extends State<TypeOfUsePage> {
                             children: <Widget>[
                               formcardtextfield6(
 
-                                value: localdata.use_in_property_doc,
+                                value: localdata.use_in_property_doc??"0",
                                 valuesList: propertyUseValues,
                                 valuesMap: propertyUses,
                                 enable: false,
@@ -198,7 +199,7 @@ class _TypeOfUsePageState extends State<TypeOfUsePage> {
                                 headerlablekey:
                                 setapptext(key: 'key_use_type_doc'),
                                 radiovalue:
-                                localdata.use_in_property_doc?.isEmpty ?? true
+                                ((localdata.use_in_property_doc?.isEmpty ?? true) || localdata.use_in_property_doc=='0')
                                     ? CheckColor.Black
                                     : CheckColor.Green,
                                 hinttextkey:

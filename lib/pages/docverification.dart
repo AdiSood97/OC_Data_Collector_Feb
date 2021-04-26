@@ -6,7 +6,7 @@ import 'package:persian_date/persian_date.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:image_picker/image_picker.dart';
-
+import 'package:shamsi_date/shamsi_date.dart';
 import '../models/localpropertydata.dart';
 import '../localization/app_translations.dart';
 import '../utils/db_helper.dart';
@@ -33,6 +33,7 @@ class _DocVerificationPageState extends State<DocVerificationPage> {
 
   String setapptext({String key}) {
     return AppTranslations.of(context).text(key);
+
   }
 
   Widget formheader({String headerlablekey}) {
@@ -289,40 +290,32 @@ class _DocVerificationPageState extends State<DocVerificationPage> {
                                               onTap: localdata.isdrafted == 2
                                                   ? null
                                                   : () {
-                                                      PersianDate now =
-                                                          PersianDate();
+                                                      PersianDate now = PersianDate();
+                                                      //DateTime nowEn = DateTime.now();
                                                       DatePicker.showDatePicker(
                                                         context,
                                                         maxYear: now.year,
                                                         onChanged:
                                                             (year, month, day) {
                                                           localdata.issued_on =
-                                                              intl.DateFormat(
-                                                                      'yyyy/MM/dd')
-                                                                  .format(
-                                                                    DateTime(
-                                                                        year,
-                                                                        month,
-                                                                        day),
-                                                                  )
+                                                             // intl.DateFormat('yyyy/MM/dd').format(
+                                                          ((Jalali(year, month, day).toGregorian().toDateTime().millisecondsSinceEpoch)~/1000).toInt()
+                                                                 //DateTime(year,month,day) )
                                                                   .toString();
                                                           setState(() {
                                                             enable = false;
                                                           });
+                                                          print( localdata.issued_on);
                                                         },
                                                         onConfirm:
                                                             (year, month, day) {
                                                           localdata.issued_on =
-                                                              intl.DateFormat(
-                                                                      'yyyy/MM/dd')
-                                                                  .format(
-                                                                    DateTime(
-                                                                        year,
-                                                                        month,
-                                                                        day),
-                                                                  )
-                                                                  .toString();
+                                                          // intl.DateFormat('yyyy/MM/dd').format(
+                                                          ((Jalali(year, month, day).toGregorian().toDateTime().millisecondsSinceEpoch)~/1000).toInt()
+                                                          //DateTime(year,month,day) )
+                                                              .toString();
                                                           setState(() {
+                                                            print(localdata.issued_on);
                                                             enable = false;
                                                           });
                                                         },
@@ -334,12 +327,14 @@ class _DocVerificationPageState extends State<DocVerificationPage> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: <Widget>[
-                                                    Text(localdata.issued_on
+                                                    Text(
+                                                        localdata.issued_on
                                                                 ?.isEmpty ??
                                                             true
                                                         ? setapptext(
                                                             key: 'kwy_notset')
-                                                        : localdata.issued_on),
+                                                        : ((Gregorian.fromDateTime((DateTime.fromMillisecondsSinceEpoch(int.parse(localdata.issued_on)*1000)))).toJalali().toString()).split('(')[1].replaceAll(',', '/').replaceAll(')', '')
+                                                    ),
                                                     IconButton(
                                                         icon: Icon(
                                                             Icons.date_range),
@@ -545,9 +540,7 @@ class _DocVerificationPageState extends State<DocVerificationPage> {
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Row(
-                                            textDirection:
-                                                locator<LanguageService>()
-                                                            .currentlanguage ==
+                                            textDirection: locator<LanguageService>().currentlanguage ==
                                                         0
                                                     ? TextDirection.ltr
                                                     : TextDirection.rtl,

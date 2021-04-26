@@ -139,24 +139,27 @@ class ReworkTask with ChangeNotifier {
     try {
       if (!(propertyid?.isEmpty ?? true)) {
         var responce = await http.get(
-            Configuration.apiurl + 'propertyinformation/$propertyid',
+            Configuration.apiurl + 'propertyinformation/?_id=$propertyid',
             headers: {
               "Content-Type": "application/json",
               "Authorization": preferences.getString("accesstoken")
             });
         if (responce.statusCode == 200) {
-          print("downloadedPropertyData id=$propertyid");
-          LocalPropertySurvey property = await jsonToProperty(
-              responseJson: json.decode(responce.body), taskid: taskid);
-          var isinsertedintodb = await DBHelper().addPropertySurvey(property);
-          if (isinsertedintodb != 0) {
-            var isupdatedintodb = await DBHelper()
-                .updatePropertySurvey(property, property.local_property_key);
-            if (isupdatedintodb != 0) {
-              //download image to appfolder which is not in phone
-              var isfilesdownloaded = await fileChecker(property: property);
-              if (isfilesdownloaded) {
-                result = true;
+          var result = json.decode(responce.body);
+          if((result['total'])!=0){
+            print("downloadedPropertyData id=$propertyid");
+            LocalPropertySurvey property = await jsonToProperty(
+                responseJson: json.decode(responce.body), taskid: taskid);
+            var isinsertedintodb = await DBHelper().addPropertySurvey(property);
+            if (isinsertedintodb != 0) {
+              var isupdatedintodb = await DBHelper()
+                  .updatePropertySurvey(property, property.local_property_key);
+              if (isupdatedintodb != 0) {
+                //download image to appfolder which is not in phone
+                var isfilesdownloaded = await fileChecker(property: property);
+                if (isfilesdownloaded) {
+                  result = true;
+                }
               }
             }
           }
@@ -539,6 +542,7 @@ class ReworkTask with ChangeNotifier {
       {Map responseJson, String taskid}) async {
     LocalPropertySurvey _localproperty = new LocalPropertySurvey();
     var apppath = await getApplicationDocumentsDirectory();
+    responseJson = responseJson['data'][0];
     _localproperty.isrework = 1;
     _localproperty.taskid = taskid;
     _localproperty.local_created_on = DateTime.now().toString();

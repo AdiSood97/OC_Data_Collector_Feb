@@ -7,6 +7,7 @@ import 'package:jalali_calendar/jalali_calendar.dart';
 import 'package:persian_date/persian_date.dart';
 import 'package:intl/intl.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 import '../models/localpropertydata.dart';
 import '../utils/appstate.dart';
@@ -299,30 +300,20 @@ class _SafariBookletPageState extends State<SafariBookletPage> {
                                                           (year, month, day) {
                                                         localdata
                                                                 .safari_booklet_issue_date =
-                                                            DateFormat(
-                                                                    'yyyy/MM/dd')
-                                                                .format(
-                                                                  DateTime(
-                                                                      year,
-                                                                      month,
-                                                                      day),
-                                                                )
-                                                                .toString();
+                                                        // intl.DateFormat('yyyy/MM/dd').format(
+                                                        ((Jalali(year, month, day).toGregorian().toDateTime().millisecondsSinceEpoch)~/1000).toInt()
+                                                        //DateTime(year,month,day) )
+                                                            .toString();
                                                         setState(() {});
                                                       },
                                                       onConfirm:
                                                           (year, month, day) {
                                                         localdata
                                                                 .safari_booklet_issue_date =
-                                                            DateFormat(
-                                                                    'yyyy/MM/dd')
-                                                                .format(
-                                                                  DateTime(
-                                                                      year,
-                                                                      month,
-                                                                      day),
-                                                                )
-                                                                .toString();
+                                                        // intl.DateFormat('yyyy/MM/dd').format(
+                                                        ((Jalali(year, month, day).toGregorian().toDateTime().millisecondsSinceEpoch)~/1000).toInt()
+                                                        //DateTime(year,month,day) )
+                                                            .toString();
                                                         setState(() {});
                                                       },
                                                     );
@@ -339,8 +330,8 @@ class _SafariBookletPageState extends State<SafariBookletPage> {
                                                             true
                                                         ? setapptext(
                                                             key: 'kwy_notset')
-                                                        : localdata
-                                                            .safari_booklet_issue_date),
+                                                        : ((Gregorian.fromDateTime((DateTime.fromMillisecondsSinceEpoch(int.parse(localdata.safari_booklet_issue_date)*1000)))).toJalali().toString()).split('(')[1].replaceAll(',', '/').replaceAll(')', '')
+                                                    ),
                                                     IconButton(
                                                         icon: Icon(
                                                             Icons.date_range),
